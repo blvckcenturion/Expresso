@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Expresso.Model;
 
 namespace Expresso.Interfaces
 {
-    internal interface IProductCategory
+    public interface IProductCategory:IBaseInterface<ProductCategory>
     {
+
     }
 }

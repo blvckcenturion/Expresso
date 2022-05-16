@@ -37,6 +37,16 @@ namespace Expresso.Model
         public BaseTable()
         {
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userID"></param>
+        public BaseTable(int userID)
+        {
+            UserID = userID;
+        }
+
         #endregion
 
     }

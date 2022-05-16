@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Expresso.Implementation
 {
-    internal class SessionClass
+    public class SessionClass
     {
+        public static int sessionUserID;
     }
 }
