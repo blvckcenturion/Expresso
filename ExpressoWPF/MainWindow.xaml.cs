@@ -24,10 +24,28 @@ namespace ExpressoWPF
         public MainWindow()
         {
             InitializeComponent();
+            fContainer.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Tg_Btn.IsChecked = false;
+        }
+
+        private void btnHome_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                Popup.PlacementTarget = btnHome;
+                Popup.Placement = PlacementMode.Right;
+                Popup.IsOpen = true;
+                Header.PopupText.Text = "Inicio";
+            }
+        }
+
+        private void btnHome_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Popup.Visibility = Visibility.Collapsed;
+            Popup.IsOpen = false;
         }
 
         private void btnPointOfSale_MouseEnter(object sender, MouseEventArgs e)
@@ -114,20 +132,29 @@ namespace ExpressoWPF
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
+
+        private void btnProductCategories_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                Popup.PlacementTarget = btnProductCategories;
+                Popup.Placement = PlacementMode.Right;
+                Popup.IsOpen = true;
+                Header.PopupText.Text = "Categorias del Producto";
+            }
+        }
+
+        private void btnProductCategories_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Popup.Visibility = Visibility.Collapsed;
+            Popup.IsOpen = false;
+        }
         // End: MenuLeft PopupButton //
 
         // Start: Button Close | Restore | Minimize 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-        private void btnRestore_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-                WindowState = WindowState.Maximized;
-            else
-                WindowState = WindowState.Normal;
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -141,9 +168,34 @@ namespace ExpressoWPF
             fContainer.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void btnPointOfSale_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/NewOrder.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnPreviousSales_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/PreviousSales.xaml", UriKind.RelativeOrAbsolute));
+        }
+
         private void btnLocations_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/Dashboard.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Pages/Locations.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnProducts_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/Products.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/Settings.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnProductCategories_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/ProductCategories.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

@@ -4,14 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ExpressoWPF.Pages"
+      FontFamily="SF Pro Display"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Products">
 
     <Grid>
         <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-            <TextBlock Text="Products" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Bold"
-                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <StackPanel>
+                
+                <TextBlock Text="Administrar Productos" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#37474F"/>
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Tipo de Garantía:" Foreground="#37474F" FontSize="15"/>
+                    <TextBox x:Name="txtWarrantyTypeName" Width="300" IsEnabled="False" Cursor="Arrow"/>
+                </StackPanel>
+
+                
+                <Label x:Name="lblInfo" Foreground="Blue" FontSize="15" Margin="5" Height="41"/>
+            </StackPanel>
         </Border>
     </Grid>
 </Page>

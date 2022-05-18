@@ -47,19 +47,25 @@
 
                 <!-- Start: MenuItem -->
                 <StackPanel Grid.Row="1" Margin="-1 80 0 20">
-                    <Button x:Name="btnPointOfSale" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPointOfSale_MouseEnter" MouseLeave="btnPointOfSale_MouseLeave">
+                    <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" MouseLeave="btnHome_MouseLeave" Click="btnHome_Click">
+                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource home}" IconWidth="24" Text="Inicio" VerticalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="btnPointOfSale" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPointOfSale_MouseEnter" MouseLeave="btnPointOfSale_MouseLeave" Click="btnPointOfSale_Click" >
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource cart}" IconWidth="24" Text="Nueva Orden" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnPreviousSales" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPreviousSales_MouseEnter" MouseLeave="btnPreviousSales_MouseLeave">
+                    <Button x:Name="btnPreviousSales" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPreviousSales_MouseEnter" MouseLeave="btnPreviousSales_MouseLeave" Click="btnPreviousSales_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource orders}" IconWidth="24" Text="Ordenes Previas" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="btnProducts_MouseLeave">
+                    <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="btnProducts_MouseLeave" Click="btnProducts_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource products}" IconWidth="24" Text="Productos" VerticalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="btnProductCategories" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProductCategories_MouseEnter" MouseLeave="btnProductCategories_MouseLeave" Click="btnProductCategories_Click">
+                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource categories}" IconWidth="24" Text="Categorias de Productos" VerticalAlignment="Center"/>
                     </Button>
                     <Button x:Name="btnLocations" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnLocations_MouseEnter" MouseLeave="btnLocations_MouseLeave" Click="btnLocations_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource location}" IconWidth="24" Text="Ubicaciones" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnSettings" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSettings_MouseEnter" MouseLeave="btnSettings_MouseLeave">
+                    <Button x:Name="btnSettings" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSettings_MouseEnter" MouseLeave="btnSettings_MouseLeave" Click="btnSettings_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="24" Text="Configuracion" VerticalAlignment="Center"/>
                     </Button>
 
@@ -105,7 +111,7 @@
             <!-- Start: Button Close | Restore | Minimize -->
             <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.RowSpan="2">
                 <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
-                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
+                <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click" Cursor="Hand"/>
             </StackPanel>
             <!-- End: Button Close | Restore | Minimize -->
 
