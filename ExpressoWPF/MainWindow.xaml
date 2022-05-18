@@ -64,7 +64,7 @@
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource products}" IconWidth="24" Text="Productos" VerticalAlignment="Center"/>
                     </Button>
                     <Button x:Name="btnProductCategories" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProductCategories_MouseEnter" MouseLeave="btnProductCategories_MouseLeave" Click="btnProductCategories_Click">
-                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource categories}" IconWidth="24" Text="Categorias de Productos" VerticalAlignment="Center"/>
+                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource categories}" IconWidth="24" Text="Categorias" VerticalAlignment="Center"/>
                     </Button>
                     <Button x:Name="btnLocations" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnLocations_MouseEnter" MouseLeave="btnLocations_MouseLeave" Click="btnLocations_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource location}" IconWidth="24" Text="Ubicaciones" VerticalAlignment="Center"/>

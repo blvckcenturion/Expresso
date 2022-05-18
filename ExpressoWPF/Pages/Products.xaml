@@ -18,26 +18,32 @@
     <Grid>
         <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
             <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}" >
-                <StackPanel>
-
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="Administrar Productos" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Foreground="{DynamicResource AccentColor}" FontFamily="Monument Extended"/>
-
-                    <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
-                        <TextBox x:Name="txtProductName" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
+                                <TextBox x:Name="txtProductName" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="Descripcion:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
+                                <TextBox x:Name="txtProductDescription" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="Precio Base:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
+                                <TextBox x:Name="txtBasePrice" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="Categoria:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
+                                <TextBox x:Name="txtCategory" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Descripcion:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
-                        <TextBox x:Name="txtProductDescription" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Precio Base:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
-                        <TextBox x:Name="txtBasePrice" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="20" Height="31" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Categoria:" Foreground="{DynamicResource PrimaryTextColor}" FontSize="15" Height="22"/>
-                        <TextBox x:Name="txtCategory" Width="230" IsEnabled="False" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                    </StackPanel>
+                    
+                    
 
                     <StackPanel Orientation="Horizontal" Margin="20" Height="50">
                         <Button x:Name="btnInsert" Margin="5" Width="180" Content="Insertar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click"/>
@@ -46,7 +52,7 @@
                         <Button x:Name="btnSave" Margin="5" Width="180" Content="Guardar" IsEnabled="False" Click="btnSave_Click" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}" Cursor="Hand"/>
                         <Button x:Name="btnCancel" Margin="5" Width="180" Content="Cancelar" IsEnabled="False" Click="btnCancel_Click" Background="{DynamicResource PrimaryTextColor}" Foreground="{DynamicResource SecundaryBackgroundColor}" BorderBrush="{x:Null}"/>
                     </StackPanel>
-                    <DataGrid x:Name="dgvData" Margin="100" Height="400" IsReadOnly="True" CanUserAddRows="False" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" SelectionChanged="dgvData_SelectionChanged" />
+                    <DataGrid x:Name="dgvData" Margin="100 0 100 20" Height="200" IsReadOnly="True" CanUserAddRows="False" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" SelectionChanged="dgvData_SelectionChanged" />
                     <Label x:Name="lblInfo" Foreground="{DynamicResource SecondaryHueMidBrush}" FontSize="15" Margin="5" Height="41"/>
                 </StackPanel>
             </Border>

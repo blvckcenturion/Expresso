@@ -116,25 +116,31 @@ namespace ExpressoWPF.Pages
             {
                 case 1:
                     //Insert
-                    product = new Product(float.Parse(txtBasePrice.Text), txtProductName.Text, txtProductDescription.Text, byte.Parse(txtCategory.Text));
-                    productType = new ProductImpl();
-                    try
+                    if(txtBasePrice.Text.Length != 0 && txtCategory.Text.Length != 0 && txtProductDescription.Text.Length != 0 && txtProductName.Text.Length != 0)
                     {
-                        int n = productType.Insert(product);
-                        if (n > 0)
+                        product = new Product(float.Parse(txtBasePrice.Text), txtProductName.Text, txtProductDescription.Text, byte.Parse(txtCategory.Text));
+                        productType = new ProductImpl();
+                        try
                         {
-                            lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
-                            DisabledButtons();
-                            Select();
+                            int n = productType.Insert(product);
+                            if (n > 0)
+                            {
+                                lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
+                                DisabledButtons();
+                                Select();
+                            }
+                            else
+                            {
+                                lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
+                            MessageBox.Show(ex.Message);
                         }
-                    }
-                    catch (Exception ex)
+                    } else
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Seleccione una Categoria de Producto para modificar.");
                     }
                     break;
                 case 2:

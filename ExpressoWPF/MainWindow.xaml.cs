@@ -141,7 +141,7 @@ namespace ExpressoWPF
                 Popup.PlacementTarget = btnProductCategories;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Categorias del Producto";
+                Header.PopupText.Text = "Categorias";
             }
         }
 

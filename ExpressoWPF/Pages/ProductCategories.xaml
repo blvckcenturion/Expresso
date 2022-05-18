@@ -34,7 +34,7 @@
                     <Button x:Name="btnSave" Margin="5" Width="180" Content="Guardar" IsEnabled="False" Click="btnSave_Click" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}" Cursor="Hand"/>
                     <Button x:Name="btnCancel" Margin="5" Width="180" Content="Cancelar" IsEnabled="False" Click="btnCancel_Click" Background="{DynamicResource PrimaryTextColor}" Foreground="{DynamicResource SecundaryBackgroundColor}" BorderBrush="{x:Null}"/>
                 </StackPanel>
-                <DataGrid x:Name="dgvData" Margin="100" Height="400" IsReadOnly="True" CanUserAddRows="False" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" SelectionChanged="dgvData_SelectionChanged" />
+                <DataGrid x:Name="dgvData" Margin="100 0 100 20" Height="200" IsReadOnly="True" CanUserAddRows="False" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" SelectionChanged="dgvData_SelectionChanged" />
                 <Label x:Name="lblInfo" Foreground="{DynamicResource SecondaryHueMidBrush}" FontSize="15" Margin="5" Height="41"/>
             </StackPanel>
         </Border>
