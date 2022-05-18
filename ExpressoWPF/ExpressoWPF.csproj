@@ -199,6 +199,12 @@
   <ItemGroup>
     <Resource Include="Resources\Images\Login.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Expresso\Expresso.csproj">
+      <Project>{5ebe58a0-4136-49d9-b8f8-2e0deff9360a}</Project>
+      <Name>Expresso</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

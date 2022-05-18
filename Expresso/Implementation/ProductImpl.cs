@@ -29,6 +29,47 @@ namespace Expresso.Implementation
             }
         }
 
+        public Product Get(byte id)
+        {
+            Product t = null;
+            string query = @"SELECT id, basePrice, productName, productDescription,productCategoryID, status, registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userID
+                             FROM Product
+                             WHERE id=@id";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = ExecuteDataReaderCommand(command);
+                while (reader.Read())
+                {
+                    
+                    t = new Product(
+                        byte.Parse(reader[0].ToString()),
+                        float.Parse(reader[1].ToString()),
+                        reader[2].ToString(), 
+                        reader[3].ToString(),
+                        byte.Parse(reader[4].ToString()),
+                        byte.Parse(reader[5].ToString()),
+                        DateTime.Parse(reader[6].ToString()),
+                        DateTime.Parse(reader[7].ToString()),
+                        int.Parse(reader[8].ToString())
+                        );
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log
+                throw ex;
+            }
+            finally
+            {
+                command.Connection.Close();
+                reader.Close();
+            }
+            return t;
+        }
+
         public int Insert(Product t)
         {
             string query = @"INSERT INTO Product(productName, basePrice, productCategoryID, productDescription, userID)
@@ -68,7 +109,7 @@ namespace Expresso.Implementation
         public int Update(Product t)
         {
             string query = @"UPDATE Product
-                             SET productName=@productName, productDescription=@productDescription, basePrice=@basePrice lastUpdate=CURRENT_TIMESTAMP, userID=@userID
+                             SET productName=@productName, productDescription=@productDescription, basePrice=@basePrice,lastUpdate=CURRENT_TIMESTAMP, userID=@userID
                              WHERE id=@id";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productName", t.ProductName);

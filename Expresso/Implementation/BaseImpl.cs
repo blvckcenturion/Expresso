@@ -10,7 +10,7 @@ namespace Expresso.Implementation
 {
     public class BaseImpl
     {
-        static string connectionString = @"Server=DESKTOP-OQV4T2R\SQLEXPRESS;Database=dbUniCreditos;User Id=sa;Password=Santiago2001;";
+        static string connectionString = @"Server=DESKTOP-OQV4T2R\SQLEXPRESS;Database=DBExpresso;User Id=sa;Password=Santiago2001;";
         
         public SqlCommand CreateBasicCommand()
         {

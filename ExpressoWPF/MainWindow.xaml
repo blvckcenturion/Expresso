@@ -8,8 +8,12 @@
         
         mc:Ignorable="d"
         Background="{DynamicResource PrimaryBackgroundColor}"
-        Title="MainWindow" Height="850" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized">
+        Title="MainWindow" Height="850" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -17,7 +21,7 @@
 
         <Border Grid.Column="0" 
                 
-                Background="{DynamicResource SecundaryBackgroundColor}">
+                Background="{DynamicResource SecundaryBackgroundColor}" Grid.RowSpan="2">
 
             <Grid x:Name="GridNav" Width="60">
                 <Grid.RowDefinitions>
@@ -81,7 +85,7 @@
             </Grid>
         </Border>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>

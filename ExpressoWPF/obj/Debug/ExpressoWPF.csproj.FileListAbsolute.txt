@@ -45,3 +45,5 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Login.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Login.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductCategories.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductCategories.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Expresso.dll
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Expresso.pdb

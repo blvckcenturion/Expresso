@@ -11,7 +11,6 @@ namespace Expresso.Model
         #region Properties
         public byte Id { get; set; }
         public string ProductCategoryName { get; set; }
-        public string ProductCategoryDescription { get; set; }
         #endregion
 
         #region Constructors
@@ -24,24 +23,20 @@ namespace Expresso.Model
         /// <param name="registerDate"></param>
         /// <param name="lastUpdate"></param>
         /// <param name="userID"></param>
-        /// <param name="productCategoryDescription"></param>
-        public ProductCategory(byte id, string productCategoryName, byte status, DateTime registerDate, DateTime lastUpdate, int userID, string productCategoryDescription)
+        public ProductCategory(byte id, string productCategoryName, byte status, DateTime registerDate, DateTime lastUpdate, int userID)
             :base(status, registerDate, lastUpdate, userID)
         {
             Id = id;
             ProductCategoryName = productCategoryName;
-            ProductCategoryDescription = productCategoryDescription;
         }
         
         /// <summary>
         /// INSERT
         /// </summary>
         /// <param name="productCategoryName"></param>
-        /// <param name="productCategoryDescription"></param>
-        public ProductCategory(string productCategoryName, string productCategoryDescription)
+        public ProductCategory(string productCategoryName)
         {
             ProductCategoryName = productCategoryName;
-            ProductCategoryDescription = productCategoryDescription;
         }
         #endregion
 

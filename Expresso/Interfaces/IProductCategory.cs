@@ -9,6 +9,6 @@ namespace Expresso.Interfaces
 {
     public interface IProductCategory:IBaseInterface<ProductCategory>
     {
-
+        ProductCategory Get(byte id);
     }
 }

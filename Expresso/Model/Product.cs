@@ -9,8 +9,8 @@ namespace Expresso.Model
     public class Product: BaseTable
     {
         #region Properties
-        public int Id { get; set; }
-        public int ProductCategoryId { get; set; }
+        public byte Id { get; set; }
+        public byte ProductCategoryId { get; set; }
         public float BasePrice { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
@@ -30,7 +30,7 @@ namespace Expresso.Model
         /// <param name="registerDate"></param>
         /// <param name="lastUpdate"></param>
         /// <param name="userID"></param>
-        public Product(int id, float basePrice, string productName, string productDescription, int productCategoryId, byte status, DateTime registerDate, DateTime lastUpdate, int userID)
+        public Product(byte id, float basePrice, string productName, string productDescription, byte productCategoryId, byte status, DateTime registerDate, DateTime lastUpdate, int userID)
             : base(status, registerDate, lastUpdate, userID)
         {
             Id = id;
@@ -47,12 +47,17 @@ namespace Expresso.Model
         /// <param name="productName"></param>
         /// <param name="productDescription"></param>
         /// <param name="productCategoryId"></param>
-        public Product(float basePrice, string productName, string productDescription, int productCategoryId)
+        public Product(float basePrice, string productName, string productDescription, byte productCategoryId)
         {
             ProductCategoryId = productCategoryId;
             BasePrice = basePrice;
             ProductName = productName;
             ProductDescription = productDescription;
+        }
+
+        public Product(string productName)
+        {
+            ProductName = productName;
         }
         #endregion
 
