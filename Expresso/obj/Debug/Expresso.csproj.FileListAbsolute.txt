@@ -1,0 +1,9 @@
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\bin\Debug\Expresso.dll
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\bin\Debug\Expresso.pdb
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\bin\Debug\System.Data.SqlClient.dll
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\bin\Debug\System.Data.SqlClient.xml
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\obj\Debug\Expresso.csproj.AssemblyReference.cache
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\obj\Debug\Expresso.csproj.CoreCompileInputs.cache
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\obj\Debug\Expresso.csproj.CopyComplete
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\obj\Debug\Expresso.dll
+C:\Users\SANTIAGO\source\repos\Expresso\Expresso\obj\Debug\Expresso.pdb
