@@ -18,7 +18,6 @@ namespace ExpressoWPF.Pages.ProductPages
     /// <summary>
     /// Lógica de interacción para Main.xaml
     /// </summary>
-    /// 
     public struct ValidatedProduct
     {
         public bool isValidated { get; set; }
@@ -64,7 +63,7 @@ namespace ExpressoWPF.Pages.ProductPages
             productType = new ProductImpl();
             if (productName != string.Empty && productDescription != string.Empty && category != string.Empty)
             {
-                if (!productType.Exists(productName) || validateExistance == false)
+                if (!productType.Exists(productName) || validateExistance == false) 
                 {
                     if (isNumeric && basePrice > 0)
                     {
