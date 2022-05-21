@@ -34,7 +34,7 @@
                         Filtrar
                     </Button>
                 </Grid>
-                <DataGrid x:Name="dgvData" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" Loaded="dgvData_Loaded" />
+                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" Loaded="dgvData_Loaded" />
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <TextBlock x:Name="txtInfo" Text="Categoria:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
                 </StackPanel>
