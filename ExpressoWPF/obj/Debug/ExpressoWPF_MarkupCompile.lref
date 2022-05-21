@@ -1,6 +1,8 @@
 ﻿
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\App.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\ErrorPopUp.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\MenuItem.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\PopUpWindow.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\UserPopup.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Login.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\MainWindow.xaml;;
@@ -9,6 +11,8 @@ FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\Locations.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\NewOrder.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\PreviousSales.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductCategories.xaml;;
-FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\Products.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductPages\List.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductPages\Main.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductPages\New.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\Settings.xaml;;
 

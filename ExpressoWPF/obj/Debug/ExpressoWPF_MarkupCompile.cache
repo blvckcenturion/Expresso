@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\App.xaml
-14825982313
+181644424793
 
-151684777901
+19-1956246847
 16-1710838714
-Controls\MenuItem.xaml;Controls\UserPopup.xaml;Login.xaml;MainWindow.xaml;Pages\Home.xaml;Pages\Locations.xaml;Pages\NewOrder.xaml;Pages\PreviousSales.xaml;Pages\ProductCategories.xaml;Pages\Products.xaml;Pages\Settings.xaml;Resources\Icons.xaml;Styles\Styles.xaml;Theme\AppTheme.xaml;
+Controls\ErrorPopUp.xaml;Controls\MenuItem.xaml;Controls\PopUpWindow.xaml;Controls\UserPopup.xaml;Login.xaml;MainWindow.xaml;Pages\Home.xaml;Pages\Locations.xaml;Pages\NewOrder.xaml;Pages\PreviousSales.xaml;Pages\ProductCategories.xaml;Pages\ProductPages\List.xaml;Pages\ProductPages\Main.xaml;Pages\ProductPages\New.xaml;Pages\Settings.xaml;Resources\Icons.xaml;Styles\Styles.xaml;Theme\AppTheme.xaml;
 
 False
 

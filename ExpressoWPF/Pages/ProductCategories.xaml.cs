@@ -107,26 +107,33 @@ namespace ExpressoWPF.Pages
             {
                 case 1:
                     //Insert
-                    productCategory = new ProductCategory(txtProductCategoryName.Text);
-                    productCategoryType = new ProductCategoryImpl();
-                    try
+                    if(txtProductCategoryName.Text.Length != 0)
                     {
-                        int n = productCategoryType.Insert(productCategory);
-                        if (n > 0)
+                        productCategory = new ProductCategory(txtProductCategoryName.Text);
+                        productCategoryType = new ProductCategoryImpl();
+                        try
                         {
-                            lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
-                            DisabledButtons();
-                            Select();
+                            int n = productCategoryType.Insert(productCategory);
+                            if (n > 0)
+                            {
+                                lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
+                                DisabledButtons();
+                                Select();
+                            }
+                            else
+                            {
+                                lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
+                            MessageBox.Show(ex.Message);
                         }
-                    }
-                    catch (Exception ex)
+                    } else
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("Ingrese un nombre de categoria valido.");
                     }
+                    
                     break;
                 case 2:
                     if(productCategory !=null)
@@ -174,7 +181,7 @@ namespace ExpressoWPF.Pages
             try
             {
                 dgvData.ItemsSource = productCategoryType.Select().DefaultView;
-                dgvData.Columns[0].Visibility = Visibility.Collapsed;
+                
             }
             catch (Exception ex)
             {

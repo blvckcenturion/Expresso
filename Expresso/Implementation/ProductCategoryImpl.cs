@@ -59,6 +59,36 @@ namespace Expresso.Implementation
             return t;
         }
 
+        public ProductCategory Get(string categoryName)
+        {
+            ProductCategory t = null;
+            string query = @"SELECT id
+                             FROM ProductCategory
+                             WHERE productCategoryName=@ProductCategoryName";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@ProductCategoryName", categoryName);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = ExecuteDataReaderCommand(command);
+                while (reader.Read())
+                {
+                    t = new ProductCategory(byte.Parse(reader[0].ToString()));
+                }
+            }
+            catch (Exception ex)
+            {
+                //Log
+                throw ex;
+            }
+            finally
+            {
+                command.Connection.Close();
+                reader.Close();
+            }
+            return t;
+        }
+
         public int Insert(ProductCategory t)
         {
             string query = @"INSERT INTO ProductCategory(productCategoryName, userID) 

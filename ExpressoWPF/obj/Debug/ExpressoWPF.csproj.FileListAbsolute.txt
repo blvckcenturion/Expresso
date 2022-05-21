@@ -34,12 +34,10 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\UserPopup
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Locations.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\NewOrder.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\PreviousSales.g.cs
-C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Products.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Settings.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Locations.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\NewOrder.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\PreviousSales.baml
-C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Products.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\Settings.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Login.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Login.baml
@@ -47,3 +45,13 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductCateg
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductCategories.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Expresso.dll
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Expresso.pdb
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\List.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\Main.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\New.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\List.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\Main.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\New.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\ErrorPopUp.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\ErrorPopUp.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\PopUpWindow.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\PopUpWindow.baml

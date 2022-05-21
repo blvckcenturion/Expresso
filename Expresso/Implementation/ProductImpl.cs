@@ -70,6 +70,34 @@ namespace Expresso.Implementation
             return t;
         }
 
+        public bool Exists(string productName)
+        {
+            bool exists = false;
+            string query = @"SELECT count(id) FROM Product WHERE LOWER(ProductName)=LOWER(@ProductName) AND status=1";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@productName", productName);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = ExecuteDataReaderCommand(command);
+                while (reader.Read())
+                {
+                    if(byte.Parse(reader[0].ToString()) != 0) exists = true;
+                }
+                return exists;
+            }
+            catch (Exception ex)
+            {
+                //Log
+                throw ex;
+            }
+            finally
+            {
+                command.Connection.Close();
+                reader.Close();
+            }
+        }
+
         public int Insert(Product t)
         {
             string query = @"INSERT INTO Product(productName, basePrice, productCategoryID, productDescription, userID)
@@ -92,9 +120,10 @@ namespace Expresso.Implementation
 
         public DataTable Select()
         {
-            string query = @"SELECT id, productName AS 'Nombre del Producto', productDescription AS 'Descripcion del Producto', basePrice AS 'Precio Base', productCategoryID AS 'ID De la Categoria', registerDate AS 'Fecha de Creacion'
-                             FROM Product
-                             WHERE status=1";
+            string query = @"SELECT P.id, P.productName AS 'Nombre del Producto', P.productDescription AS 'Descripcion del Producto', P.basePrice AS 'Precio Base', P.productCategoryID, PC.productCategoryName AS 'Nombre de la Categoria', P.registerDate AS 'Fecha de Creacion'
+                             FROM Product P 
+							 INNER JOIN ProductCategory PC ON P.productCategoryID = PC.id
+                             WHERE P.status=1";
             SqlCommand command = CreateBasicCommand(query);
             try
             {

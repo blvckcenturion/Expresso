@@ -66,7 +66,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\ErrorPopUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\MenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PopUpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,8 +94,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controls\ErrorPopUp.xaml.cs">
+      <DependentUpon>ErrorPopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MenuItem.xaml.cs">
       <DependentUpon>MenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PopUpWindow.xaml.cs">
+      <DependentUpon>PopUpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\UserPopup.xaml.cs">
       <DependentUpon>UserPopup.xaml</DependentUpon>
@@ -119,7 +133,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Products.xaml">
+    <Page Include="Pages\ProductPages\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductPages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProductPages\New.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,8 +178,14 @@
     <Compile Include="Pages\ProductCategories.xaml.cs">
       <DependentUpon>ProductCategories.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Products.xaml.cs">
-      <DependentUpon>Products.xaml</DependentUpon>
+    <Compile Include="Pages\ProductPages\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductPages\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProductPages\New.xaml.cs">
+      <DependentUpon>New.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -197,13 +225,19 @@
     <Resource Include="Isotype.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\Login.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Expresso\Expresso.csproj">
       <Project>{5ebe58a0-4136-49d9-b8f8-2e0deff9360a}</Project>
       <Name>Expresso</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Success.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />

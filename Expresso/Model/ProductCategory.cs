@@ -29,6 +29,11 @@ namespace Expresso.Model
             Id = id;
             ProductCategoryName = productCategoryName;
         }
+
+        public ProductCategory(byte id)
+        {
+            Id = id;
+        }
         
         /// <summary>
         /// INSERT

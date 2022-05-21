@@ -5,7 +5,8 @@
     <SolidColorBrush x:Key="SecundaryBackgroundColor" Color="#06090F"/>
 
     <!-- Primary Colors -->
-    <SolidColorBrush x:Key="AccentColor" Color="#F3A712"/>
+    <SolidColorBrush x:Key="AccentColor" Color="#3A78CF"/>
+    <SolidColorBrush x:Key="SecondaryAccentColor" Color="#245294"/>
 
     <!-- Typograhy Colors -->
     <SolidColorBrush x:Key="PrimaryTextColor" Color="#E8EDEC"/>
