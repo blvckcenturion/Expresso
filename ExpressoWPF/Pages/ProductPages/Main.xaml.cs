@@ -9,29 +9,34 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Expresso.Implementation;
 using Expresso.Model;
-using System.Data;
-
+using ExpressoWPF.Controls;
 
 namespace ExpressoWPF.Pages.ProductPages
 {
     /// <summary>
     /// Lógica de interacción para Main.xaml
     /// </summary>
+    /// 
+    public struct ValidatedProduct
+    {
+        public bool isValidated { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public float ProductBasePrice { get; set; }
+        public string ProductCategory { get; set; }
+    }
+
     public partial class Main : Page
     {
-        List<Page> pages = new List<Page>();
         List<Button> buttons = new List<Button>();
+        static ProductImpl productType;
+
         public Main()
         {
             InitializeComponent();
-            pages.Add(new List());
             buttons.Add(btnSection1);
-            pages.Add(new New(this));
             buttons.Add(btnSection2);
             SwitchTabs(0);
         }
@@ -46,10 +51,51 @@ namespace ExpressoWPF.Pages.ProductPages
             SwitchTabs(1);
         }
 
+        public static ValidatedProduct ValidateProduct(string productName, string productDescription, string productBasePrice, string category, bool validateExistance)
+        {
+            productName = productName.Trim();
+            productDescription = productDescription.Trim();
+            productBasePrice = productBasePrice.Trim();
+            float basePrice;
+            bool isNumeric = float.TryParse(productBasePrice, out basePrice);
+            string error = "";
+            ValidatedProduct vp = new ValidatedProduct();
+
+            productType = new ProductImpl();
+            if (productName != string.Empty && productDescription != string.Empty && category != string.Empty)
+            {
+                if (!productType.Exists(productName) || validateExistance == false)
+                {
+                    if (isNumeric && basePrice > 0)
+                    {
+                        vp.ProductBasePrice = basePrice;
+                        vp.ProductDescription = productDescription;
+                        vp.ProductName = productName;
+                        vp.ProductCategory = category;
+                        vp.isValidated = true;
+                        return vp;
+                    }
+                    else
+                    {
+                        error = "El valor indicado para el precio base es invalido.";
+                    }
+                }
+                else
+                {
+                    error = "Existe un producto con el mismo nombre.";
+                }
+            }
+            else
+            {
+                error = "Existen campos en blanco que son requeridos.";
+            }
+            new PopUpWindow(0, error).Show();
+            vp.isValidated = false;
+            return vp;
+        }
+
         public void SwitchTabs(byte value)
         {
-            
-            Content.Navigate(pages[value]);
             buttons.ForEach(b =>
             {
                 if (value == buttons.IndexOf(b))
@@ -64,7 +110,15 @@ namespace ExpressoWPF.Pages.ProductPages
                 }
             });
 
-
+            switch (value)
+            {
+                case 0:
+                    Content.Navigate(new List());
+                    break;
+                case 1:
+                    Content.Navigate(new New(this));
+                    break;
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ namespace Expresso.Model
         public float BasePrice { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
+        public string ProductCategoryName { get; set; }
+
         #endregion
 
         #region Constructors
@@ -30,7 +32,7 @@ namespace Expresso.Model
         /// <param name="registerDate"></param>
         /// <param name="lastUpdate"></param>
         /// <param name="userID"></param>
-        public Product(byte id, float basePrice, string productName, string productDescription, byte productCategoryId, byte status, DateTime registerDate, DateTime lastUpdate, int userID)
+        public Product(byte id, float basePrice, string productName, string productDescription, byte productCategoryId, byte status, string productCategoryName, DateTime registerDate, DateTime lastUpdate, int userID)
             : base(status, registerDate, lastUpdate, userID)
         {
             Id = id;
@@ -38,6 +40,7 @@ namespace Expresso.Model
             BasePrice = basePrice;
             ProductName = productName;
             ProductDescription = productDescription;
+            ProductCategoryName = productCategoryName;
         }
 
         /// <summary>
@@ -47,9 +50,9 @@ namespace Expresso.Model
         /// <param name="productName"></param>
         /// <param name="productDescription"></param>
         /// <param name="productCategoryId"></param>
-        public Product(float basePrice, string productName, string productDescription, byte productCategoryId)
+        public Product(float basePrice, string productName, string productDescription, string productCategoryName)
         {
-            ProductCategoryId = productCategoryId;
+            ProductCategoryName = productCategoryName;
             BasePrice = basePrice;
             ProductName = productName;
             ProductDescription = productDescription;

@@ -32,9 +32,10 @@ namespace Expresso.Implementation
         public Product Get(byte id)
         {
             Product t = null;
-            string query = @"SELECT id, basePrice, productName, productDescription,productCategoryID, status, registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userID
-                             FROM Product
-                             WHERE id=@id";
+            string query = @"SELECT P.id, P.basePrice, P.productName, P.productDescription, P.productCategoryID, P.status, PC.productCategoryName, P.registerDate, ISNULL(P.lastUpdate, CURRENT_TIMESTAMP), P.userID
+                             FROM Product P
+                             INNER JOIN ProductCategory PC on P.productCategoryID = PC.id
+                             WHERE P.id=@id";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = null;
@@ -51,9 +52,10 @@ namespace Expresso.Implementation
                         reader[3].ToString(),
                         byte.Parse(reader[4].ToString()),
                         byte.Parse(reader[5].ToString()),
-                        DateTime.Parse(reader[6].ToString()),
+                        reader[6].ToString(),
                         DateTime.Parse(reader[7].ToString()),
-                        int.Parse(reader[8].ToString())
+                        DateTime.Parse(reader[8].ToString()),
+                        int.Parse(reader[9].ToString())
                         );
                 }
             }
@@ -100,12 +102,14 @@ namespace Expresso.Implementation
 
         public int Insert(Product t)
         {
+            ProductCategoryImpl productCategoryType = new ProductCategoryImpl();
+            ProductCategory pc = productCategoryType.Get(t.ProductCategoryName);
             string query = @"INSERT INTO Product(productName, basePrice, productCategoryID, productDescription, userID)
                             VALUES(@productName, @basePrice, @productCategoryID, @productDescription, @userID)";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productName", t.ProductName);
             command.Parameters.AddWithValue("@basePrice", t.BasePrice);
-            command.Parameters.AddWithValue("@productCategoryId", t.ProductCategoryId);
+            command.Parameters.AddWithValue("@productCategoryId", pc.Id);
             command.Parameters.AddWithValue("@productDescription", t.ProductDescription);
             command.Parameters.AddWithValue("@userID", SessionClass.sessionUserID);
             try
@@ -137,13 +141,16 @@ namespace Expresso.Implementation
 
         public int Update(Product t)
         {
+            ProductCategoryImpl productCategoryType = new ProductCategoryImpl();
+            ProductCategory pc = productCategoryType.Get(t.ProductCategoryName);
             string query = @"UPDATE Product
-                             SET productName=@productName, productDescription=@productDescription, basePrice=@basePrice,lastUpdate=CURRENT_TIMESTAMP, userID=@userID
+                             SET productName=@productName, productDescription=@productDescription, basePrice=@basePrice,lastUpdate=CURRENT_TIMESTAMP, userID=@userID, productCategoryID=@productCategoryID
                              WHERE id=@id";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productName", t.ProductName);
             command.Parameters.AddWithValue("@productDescription", t.ProductDescription);
             command.Parameters.AddWithValue("@basePrice", t.BasePrice);
+            command.Parameters.AddWithValue("@productCategoryID", pc.Id);
             command.Parameters.AddWithValue("@id", t.Id);
             command.Parameters.AddWithValue("@userID", SessionClass.sessionUserID);
             try

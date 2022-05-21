@@ -38,50 +38,32 @@ namespace ExpressoWPF.Pages.ProductPages
         {
             productType = new ProductImpl();
             productCategoryType = new ProductCategoryImpl();
-            string productName = txtProductName.Text.Trim();
-            string productDescription = txtProductDescription.Text.Trim();
-            float productBasePrice;
-            bool isNumeric = float.TryParse(txtProductBasePrice.Text.Trim(), out productBasePrice);
 
-            if (productName != string.Empty && productDescription != string.Empty && txtProductBasePrice.Text.Trim() != string.Empty && cbCategories.Text != string.Empty)
+            ValidatedProduct vp = Main.ValidateProduct(txtProductName.Text, txtProductDescription.Text, txtProductBasePrice.Text, cbCategories.Text, true);
+            if (vp.isValidated)
             {
-                if(!productType.Exists(txtProductName.Text))
+                try
                 {
-                    if(isNumeric)
+                    Product p = new Product(vp.ProductBasePrice, vp.ProductName, vp.ProductDescription, vp.ProductCategory);
+                    int n = productType.Insert(p);
+                    if (n > 0)
                     {
-                        ProductCategory pc = productCategoryType.Get(cbCategories.Text);
-                        Product p = new Product(productBasePrice, productName, productDescription, pc.Id);
-                        try
-                        {
-                            int n = productType.Insert(p);
-                            if (n > 0)
-                            {
-                                new PopUpWindow(1, "Insercion de producto realizada de forma exitosa. sapo sapo sapo sapo sapo sapo\n" + DateTime.Now).Show();
-                                txtProductBasePrice.Text = String.Empty;
-                                txtProductName.Text = String.Empty;
-                                txtProductDescription.Text = String.Empty;
-                                cbCategories.Text = String.Empty;
-                                Main.SwitchTabs(0);
-                            }
-                            else
-                            {
-                                new PopUpWindow(0,"No se realizarion inserciones\n" + DateTime.Now).Show();
-                            }
-                        } catch(Exception ex)
-                        {
-                            new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
-                        }
-                    } else
-                    {
-                        new PopUpWindow(0, "El valor indicado para el precio base es invalido.").Show();
+                        new PopUpWindow(1, "Insercion de producto realizada de forma exitosa.\n" + DateTime.Now).Show();
+                        txtProductBasePrice.Text = String.Empty;
+                        txtProductName.Text = String.Empty;
+                        txtProductDescription.Text = String.Empty;
+                        cbCategories.Text = String.Empty;
+                        Main.SwitchTabs(0);
                     }
-                } else
-                {
-                    new PopUpWindow(0, "Existe un producto con el mismo nombre.").Show();
+                    else
+                    {
+                        new PopUpWindow(0, "No se realizarion inserciones\n" + DateTime.Now).Show();
+                    }
                 }
-            } else
-            {
-                new PopUpWindow(0,"Existen campos en blanco que son requeridos.").Show();
+                catch (Exception ex)
+                {
+                    new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
+                }
             }
         }
 
@@ -92,6 +74,7 @@ namespace ExpressoWPF.Pages.ProductPages
             try
             {
                 categories = productCategoryType.Select();
+                cbCategories.ItemsSource = null;
                 foreach (DataRow row in categories.Rows)
                 {
                     cbCategories.Items.Add(row["Nombre de la Categoria"].ToString());
