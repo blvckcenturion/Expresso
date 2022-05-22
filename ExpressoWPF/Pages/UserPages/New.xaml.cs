@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Data;
 using Expresso.Implementation;
 using ExpressoWPF.Controls;
+using Expresso.Model;
 
 namespace ExpressoWPF.Pages.UserPages
 {
@@ -26,7 +27,7 @@ namespace ExpressoWPF.Pages.UserPages
         Main Main;
         TownImpl townType;
         EmployeeImpl employeeType;
-
+        Employee employee;
         public New(Main main)
         {
             InitializeComponent();
@@ -39,8 +40,15 @@ namespace ExpressoWPF.Pages.UserPages
             ValidatedUser vu = Main.ValidateUser(txtFirstName.Text, txtLastName.Text, txtSecondLastName.Text, txtPhone.Text, txtAddress.Text, txtCI.Text, txtEmail.Text, cbGender.Text, cbRoles.Text, cbTown.Text, dpBirthDate.SelectedDate.ToString());
             if (vu.IsValidated)
             {
-                new PopUpWindow(1, "Usuario validado\n" + vu.Employee.BirthDate).Show();
+                try
+                {
+                    employee = vu.Employee;
 
+                } catch (Exception ex)
+                {
+                    new PopUpWindow(1, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
+                }
+                
             }
         }
         

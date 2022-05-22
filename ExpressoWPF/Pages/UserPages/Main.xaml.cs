@@ -82,7 +82,7 @@ namespace ExpressoWPF.Pages.UserPages
                 {
                     if(IsValidEmail(email))
                     { 
-                        vu.Employee = new Employee("", "", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role,email) ;
+                        vu.Employee = new Employee("sapo", "sapo", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role,email) ;
                         vu.IsValidated = true;
                         return vu;
                     } else
