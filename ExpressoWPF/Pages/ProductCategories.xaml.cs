@@ -100,72 +100,72 @@ namespace ExpressoWPF.Pages
             }
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
+        //private void btnSave_Click(object sender, RoutedEventArgs e)
+        //{
 
-            switch (this.op)
-            {
-                case 1:
-                    //Insert
-                    if(txtProductCategoryName.Text.Length != 0)
-                    {
-                        productCategory = new ProductCategory(txtProductCategoryName.Text);
-                        productCategoryType = new ProductCategoryImpl();
-                        try
-                        {
-                            int n = productCategoryType.Insert(productCategory);
-                            if (n > 0)
-                            {
-                                lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
-                                DisabledButtons();
-                                Select();
-                            }
-                            else
-                            {
-                                lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    } else
-                    {
-                        MessageBox.Show("Ingrese un nombre de categoria valido.");
-                    }
+        //    switch (this.op)
+        //    {
+        //        case 1:
+        //            //Insert
+        //            if(txtProductCategoryName.Text.Length != 0)
+        //            {
+        //                productCategory = new ProductCategory(txtProductCategoryName.Text);
+        //                productCategoryType = new ProductCategoryImpl();
+        //                try
+        //                {
+        //                    int n = productCategoryType.Insert(productCategory);
+        //                    if (n > 0)
+        //                    {
+        //                        lblInfo.Content = "Registro insertado con exito - " + DateTime.Now;
+        //                        DisabledButtons();
+        //                        Select();
+        //                    }
+        //                    else
+        //                    {
+        //                        lblInfo.Content = "No se realizarion inserciones - " + DateTime.Now;
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    MessageBox.Show(ex.Message);
+        //                }
+        //            } else
+        //            {
+        //                MessageBox.Show("Ingrese un nombre de categoria valido.");
+        //            }
                     
-                    break;
-                case 2:
-                    if(productCategory !=null)
-                    {
-                        //Update
-                        productCategory.ProductCategoryName = txtProductCategoryName.Text;
-                        productCategoryType = new ProductCategoryImpl();
-                        try
-                        {
-                            int n = productCategoryType.Update(productCategory);
-                            if (n > 0)
-                            {
-                                lblInfo.Content = "Registro modificado con exito - " + DateTime.Now;
-                                DisabledButtons();
-                                Select();
-                            }
-                            else
-                            {
-                                lblInfo.Content = "No se realizarion actualizaciones - " + DateTime.Now;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                    } else
-                    {
-                        MessageBox.Show("Seleccione una Categoria de Producto para modificar.");
-                    }
-                    break;
-            }
-        }
+        //            break;
+        //        case 2:
+        //            if(productCategory !=null)
+        //            {
+        //                //Update
+        //                productCategory.ProductCategoryName = txtProductCategoryName.Text;
+        //                productCategoryType = new ProductCategoryImpl();
+        //                try
+        //                {
+        //                    int n = productCategoryType.Update(productCategory);
+        //                    if (n > 0)
+        //                    {
+        //                        lblInfo.Content = "Registro modificado con exito - " + DateTime.Now;
+        //                        DisabledButtons();
+        //                        Select();
+        //                    }
+        //                    else
+        //                    {
+        //                        lblInfo.Content = "No se realizarion actualizaciones - " + DateTime.Now;
+        //                    }
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    MessageBox.Show(ex.Message);
+        //                }
+        //            } else
+        //            {
+        //                MessageBox.Show("Seleccione una Categoria de Producto para modificar.");
+        //            }
+        //            break;
+        //    }
+        //}
     
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

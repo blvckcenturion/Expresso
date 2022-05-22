@@ -1,0 +1,83 @@
+﻿<Page x:Class="ExpressoWPF.Pages.UserPages.List"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExpressoWPF.Pages.UserPages"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.FontFamily="SF Pro Display"
+      TextElement.FontSize="20"
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="List">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Grid.ColumnSpan="1" x:Name="MainContent" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
+            <Grid Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" x:Name="txtFilter" Margin="5 20" Foreground="{DynamicResource PrimaryTextColor}" materialDesign:HintAssist.Hint="Nombre de Usuario (username)" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}"/>
+                    <Button Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnFilter" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnFilter_Click">
+                        Filtrar
+                    </Button>
+                    <Button Grid.Column="2" x:Name="btnShowAll" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnShowAll_Click" Visibility="Collapsed">
+                        Mostrar Todos
+                    </Button>
+                </Grid>
+                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" Loaded="dgvData_Loaded" FontFamily="SF Pro Display" FontSize="24" SelectionChanged="dgvData_SelectionChanged" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock x:Name="txtInfo" Text="Categoria:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Visible" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
+            <Grid Grid.Column="1" Margin="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Detalles" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="{DynamicResource SecondaryAccentColor}" FontFamily="Monument Extended"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtProductName" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Precio Base:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtProductBasePrice" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Descripcion:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtProductDescription" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Categoria:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <ComboBox Grid.Column="1" Grid.Row="3" x:Name="cbCategories" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignCheckBoxDisabled}" Background="{x:Null}"/>
+                </Grid>
+                <Button Grid.Row="2" x:Name="btnUpdate" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnUpdate_Click">
+                    Actualizar
+                </Button>
+                <Button Grid.Row="3" x:Name="btnDelete" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnDelete_Click">
+                    Eliminar
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

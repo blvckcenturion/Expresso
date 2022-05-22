@@ -32,7 +32,7 @@ namespace Expresso.Implementation
         public ProductCategory Get(byte id)
         {
             ProductCategory t = null;
-            string query = @"SELECT id, productCategoryName, status, registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userID
+            string query = @"SELECT id, productCategoryName, productCategoryDescription, status, registerDate, ISNULL(lastUpdate, CURRENT_TIMESTAMP), userID
                              FROM ProductCategory
                              WHERE id=@id";
             SqlCommand command = CreateBasicCommand(query);
@@ -43,7 +43,7 @@ namespace Expresso.Implementation
                 reader = ExecuteDataReaderCommand(command);
                 while (reader.Read())
                 {
-                    t = new ProductCategory(byte.Parse(reader[0].ToString()), reader[1].ToString(), byte.Parse(reader[2].ToString()), DateTime.Parse(reader[3].ToString()), DateTime.Parse(reader[4].ToString()), int.Parse(reader[5].ToString()));
+                    t = new ProductCategory(byte.Parse(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), byte.Parse(reader[3].ToString()), DateTime.Parse(reader[4].ToString()), DateTime.Parse(reader[5].ToString()), int.Parse(reader[6].ToString()));
                 }
             }
             catch (Exception ex)
@@ -95,6 +95,7 @@ namespace Expresso.Implementation
                              VALUES(@productCategoryName, @userID)";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productCategoryName", t.ProductCategoryName);
+            command.Parameters.AddWithValue("@productCategoryDescription", t.ProductCategoryDescription);
             command.Parameters.AddWithValue("@userID", SessionClass.sessionUserID);
             try
             {
@@ -107,7 +108,7 @@ namespace Expresso.Implementation
 
         public DataTable Select()
         {
-            string query = @"SELECT id, productCategoryName AS 'Nombre de la Categoria', registerDate AS 'Fecha de Creacion'
+            string query = @"SELECT id, productCategoryName AS 'Nombre de la Categoria', productCategoryDescription AS 'Descripcion de la Categoria', registerDate AS 'Fecha de Creacion'
                              FROM ProductCategory
                              WHERE status=1";
             SqlCommand command = CreateBasicCommand(query);
@@ -127,6 +128,7 @@ namespace Expresso.Implementation
                              WHERE id=@id";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productCategoryName", t.ProductCategoryName);
+            command.Parameters.AddWithValue("@productCategoryDescription", t.ProductCategoryDescription);
             command.Parameters.AddWithValue("@id", t.Id);
             command.Parameters.AddWithValue("@userID", SessionClass.sessionUserID);
             try

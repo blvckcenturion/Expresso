@@ -31,7 +31,7 @@
                     <Button x:Name="btnInsert" Margin="5" Width="180" Content="Insertar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click"/>
                     <Button x:Name="btnUpdate" Margin="5" Width="180" Content="Modificar" Click="btnUpdate_Click" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}"/>
                     <Button x:Name="btnDelete" Margin="5" Width="180" Content="Eliminar" Cursor="Hand" Click="btnDelete_Click" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}"/>
-                    <Button x:Name="btnSave" Margin="5" Width="180" Content="Guardar" IsEnabled="False" Click="btnSave_Click" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}" Cursor="Hand"/>
+                    <Button x:Name="btnSave" Margin="5" Width="180" Content="Guardar" IsEnabled="False" Background="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" BorderBrush="{x:Null}" Cursor="Hand"/>
                     <Button x:Name="btnCancel" Margin="5" Width="180" Content="Cancelar" IsEnabled="False" Click="btnCancel_Click" Background="{DynamicResource PrimaryTextColor}" Foreground="{DynamicResource SecundaryBackgroundColor}" BorderBrush="{x:Null}"/>
                 </StackPanel>
                 <DataGrid x:Name="dgvData" Margin="100 0 100 20" Height="200" IsReadOnly="True" CanUserAddRows="False" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" SelectionChanged="dgvData_SelectionChanged" />

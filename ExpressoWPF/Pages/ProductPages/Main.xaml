@@ -9,9 +9,7 @@
          FontFamily="SF Pro Display"
       d:DesignHeight="900" d:DesignWidth="1100"
       Title="Main">
-
-    <Grid>
-        <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
             <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}" >
                 <Grid Margin="0 10">
                     <Grid.RowDefinitions>
@@ -39,5 +37,4 @@
 
             </Border>
         </Border>
-    </Grid>
 </Page>

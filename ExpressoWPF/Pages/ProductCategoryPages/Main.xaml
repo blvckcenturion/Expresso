@@ -1,0 +1,39 @@
+﻿<Page x:Class="ExpressoWPF.Pages.ProductCategoryPages.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ExpressoWPF.Pages.ProductCategoryPages"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      FontFamily="SF Pro Display"
+      d:DesignHeight="900" d:DesignWidth="1100"
+      Title="Main">
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}" >
+            <Grid Margin="0 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="8.5*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Row="0">
+                    <TextBlock Text="Categorias de Productos" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Foreground="{DynamicResource AccentColor}" FontFamily="Monument Extended"/>
+                    <Grid Height="50">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="btnSection1" Grid.Column="0" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnSection1_Click" >
+                            Lista de Categorias
+                        </Button>
+                        <Button x:Name="btnSection2" Grid.Column="1" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnSection2_Click" >
+                            Agregar Categoria
+                        </Button>
+                    </Grid>
+                </StackPanel>
+                <Frame Grid.Row="1" Name="Content"/>
+            </Grid>
+
+        </Border>
+    </Border>
+</Page>

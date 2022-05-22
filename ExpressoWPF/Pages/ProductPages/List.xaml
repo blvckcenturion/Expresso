@@ -26,12 +26,16 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0" Margin="10">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <TextBox Grid.Column="0" x:Name="txtFilter" Margin="5 20" Foreground="{DynamicResource PrimaryTextColor}" materialDesign:HintAssist.Hint="Nombre del Producto" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}"/>
-                    <Button Grid.Column="1" x:Name="btnFilter" Margin="20 5" FontWeight="Normal" Cursor="Hand">
+                    <Button Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnFilter" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnFilter_Click">
                         Filtrar
+                    </Button>
+                    <Button Grid.Column="2" x:Name="btnShowAll" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnShowAll_Click" Visibility="Collapsed">
+                        Mostrar Todos
                     </Button>
                 </Grid>
                 <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" Loaded="dgvData_Loaded" FontFamily="SF Pro Display" FontSize="24" SelectionChanged="dgvData_SelectionChanged" />

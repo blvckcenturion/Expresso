@@ -65,18 +65,24 @@ namespace ExpressoWPF.Pages.ProductPages
             {
                 if (!productType.Exists(productName) || validateExistance == false) 
                 {
-                    if (isNumeric && basePrice > 0)
+                    if(productName.Length <= 150 && productDescription.Length <= 300)
                     {
-                        vp.ProductBasePrice = basePrice;
-                        vp.ProductDescription = productDescription;
-                        vp.ProductName = productName;
-                        vp.ProductCategory = category;
-                        vp.isValidated = true;
-                        return vp;
-                    }
-                    else
+                        if (isNumeric && basePrice > 0)
+                        {
+                            vp.ProductBasePrice = basePrice;
+                            vp.ProductDescription = productDescription;
+                            vp.ProductName = productName;
+                            vp.ProductCategory = category;
+                            vp.isValidated = true;
+                            return vp;
+                        }
+                        else
+                        {
+                            error = "El valor indicado para el precio base es invalido.";
+                        }
+                    } else
                     {
-                        error = "El valor indicado para el precio base es invalido.";
+                        error = "Los valores indicados superan el rango de longitud establecido.";
                     }
                 }
                 else

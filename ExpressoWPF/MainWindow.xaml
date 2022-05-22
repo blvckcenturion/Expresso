@@ -5,7 +5,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpressoWPF"
-        
         mc:Ignorable="d"
         Background="{DynamicResource PrimaryBackgroundColor}"
         Title="MainWindow" Height="850" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
@@ -51,25 +50,31 @@
 
                 <!-- Start: MenuItem -->
                 <StackPanel Grid.Row="1" Margin="-1 80 0 20">
-                    <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" MouseLeave="btnHome_MouseLeave" Click="btnHome_Click">
+                    <Button x:Name="btnHome" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnHome_MouseEnter" Click="btnHome_Click" MouseLeave="OnMouseLeave">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource home}" IconWidth="24" Text="Inicio" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnPointOfSale" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPointOfSale_MouseEnter" MouseLeave="btnPointOfSale_MouseLeave" Click="btnPointOfSale_Click" >
+                    <Button x:Name="btnPointOfSale" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPointOfSale_MouseEnter" MouseLeave="OnMouseLeave" Click="btnPointOfSale_Click" >
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource cart}" IconWidth="24" Text="Nueva Orden" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnPreviousSales" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPreviousSales_MouseEnter" MouseLeave="btnPreviousSales_MouseLeave" Click="btnPreviousSales_Click">
+                    <Button x:Name="btnPreviousSales" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnPreviousSales_MouseEnter" MouseLeave="OnMouseLeave" Click="btnPreviousSales_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource orders}" IconWidth="24" Text="Ordenes Previas" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="btnProducts_MouseLeave" Click="btnProducts_Click">
+                    <Button x:Name="btnProducts" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProducts_MouseEnter" MouseLeave="OnMouseLeave" Click="btnProducts_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource products}" IconWidth="24" Text="Productos" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnProductCategories" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProductCategories_MouseEnter" MouseLeave="btnProductCategories_MouseLeave" Click="btnProductCategories_Click">
+                    <Button x:Name="btnProductCategories" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnProductCategories_MouseEnter" MouseLeave="OnMouseLeave" Click="btnProductCategories_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource categories}" IconWidth="24" Text="Categorias" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnLocations" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnLocations_MouseEnter" MouseLeave="btnLocations_MouseLeave" Click="btnLocations_Click">
+                    <Button x:Name="btnLocations" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnLocations_MouseEnter" MouseLeave="OnMouseLeave" Click="btnLocations_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource AccentColor}" Icon="{DynamicResource location}" IconWidth="24" Text="Ubicaciones" VerticalAlignment="Center"/>
                     </Button>
-                    <Button x:Name="btnSettings" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSettings_MouseEnter" MouseLeave="btnSettings_MouseLeave" Click="btnSettings_Click">
+                    <Button x:Name="btnUsers" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnUsers_MouseEnter" MouseLeave="OnMouseLeave" Click="btnUsers_Click">
+                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource users}" IconWidth="24" Text="Usuarios" VerticalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="btnClients" Style="{DynamicResource PopupButtonStyle}" Click="btnClients_Click" MouseEnter="btnClients_MouseEnter" MouseLeave="OnMouseLeave" >
+                        <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource clients}" IconWidth="24" Text="Clientes" VerticalAlignment="Center"/>
+                    </Button>
+                    <Button x:Name="btnSettings" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btnSettings_MouseEnter" MouseLeave="OnMouseLeave" Click="btnSettings_Click">
                         <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource settings}" IconWidth="24" Text="Configuracion" VerticalAlignment="Center"/>
                     </Button>
 

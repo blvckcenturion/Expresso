@@ -74,7 +74,7 @@ namespace ExpressoWPF.Pages.ProductPages
             try
             {
                 categories = productCategoryType.Select();
-                cbCategories.ItemsSource = null;
+                cbCategories.Items.Clear();
                 foreach (DataRow row in categories.Rows)
                 {
                     cbCategories.Items.Add(row["Nombre de la Categoria"].ToString());
@@ -82,7 +82,7 @@ namespace ExpressoWPF.Pages.ProductPages
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo completar la acción\nComuniquese con el Adm de Sistemas." + ex.Message);
+                new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
             }
         }
 

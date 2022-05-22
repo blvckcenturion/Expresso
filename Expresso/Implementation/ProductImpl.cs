@@ -139,6 +139,25 @@ namespace Expresso.Implementation
             }
         }
 
+        public DataTable Select(string productName) 
+        {
+            string query = @"SELECT P.id, P.productName AS 'Nombre del Producto', P.productDescription AS 'Descripcion del Producto', P.basePrice AS 'Precio Base', P.productCategoryID, PC.productCategoryName AS 'Nombre de la Categoria', P.registerDate AS 'Fecha de Creacion'
+                             FROM Product P
+                             INNER JOIN ProductCategory PC ON P.productCategoryID = PC.id
+                             WHERE P.status = 1 AND P.productName LIKE LOWER(@productName)";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@productName", "%"+productName+ "%");
+            try
+            {
+                return ExecuteDataTableCommand(command);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         public int Update(Product t)
         {
             ProductCategoryImpl productCategoryType = new ProductCategoryImpl();

@@ -84,14 +84,13 @@ namespace ExpressoWPF.Pages.ProductPages
             OptionsContent.Visibility = Visibility.Visible;
         }
 
-        private void scaleUp()
+        private void scaleUp(bool select)
         {
             MainContent.SetValue(Grid.ColumnSpanProperty, 2);
             dgvData.FontSize = 24;
             dgvData.ItemsSource = null;
-            SelectProducts();
-            
             OptionsContent.Visibility = Visibility.Collapsed;
+            if (select) SelectProducts();
         }
 
         private void dgvData_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -131,7 +130,7 @@ namespace ExpressoWPF.Pages.ProductPages
                     if (n > 0)
                     {
                         new PopUpWindow(1, "Registro eliminado de forma exitosa.\n" + DateTime.Now).Show();
-                        scaleUp();
+                        scaleUp(true);
                     } else
                     {
                         new PopUpWindow(0, "No se realizo la eliminacion.\n" + DateTime.Now).Show();
@@ -167,7 +166,7 @@ namespace ExpressoWPF.Pages.ProductPages
                         if (n > 0)
                         {
                             new PopUpWindow(1, "Registro actualizado de forma exitosa.\n" + DateTime.Now).Show();
-                            scaleUp();
+                            scaleUp(true);
                         }
                         else
                         {
@@ -177,10 +176,42 @@ namespace ExpressoWPF.Pages.ProductPages
                     {
                         showException(ex);
                     }
-                    
                 }
                 
             }
+        }
+
+        private void btnFilter_Click(object sender, RoutedEventArgs e)
+        {
+            string filter = txtFilter.Text.Trim();
+            if(filter != string.Empty)
+            {
+                productType = new ProductImpl();
+                try
+                {
+                    scaleUp(false);
+                    dgvData.ItemsSource = productType.Select(filter).DefaultView;
+                    txtInfo.Text = dgvData.Items.Count + " Registros Encontrados.";
+                    dgvData.Columns[0].Visibility = Visibility.Collapsed;
+                    dgvData.Columns[4].Visibility = Visibility.Collapsed;
+                    btnFilter.SetValue(Grid.ColumnSpanProperty, 1);
+                    btnShowAll.Visibility = Visibility.Visible;
+                    txtFilter.Text = string.Empty;
+
+                }
+                catch (Exception ex)
+                {
+                    showException(ex);
+                }
+            }
+        }
+
+        private void btnShowAll_Click(object sender, RoutedEventArgs e)
+        {
+            txtFilter.Text = string.Empty;
+            scaleUp(true);
+            btnFilter.SetValue(Grid.ColumnSpanProperty, 2);
+            btnShowAll.Visibility = Visibility.Collapsed;
         }
     }
 }

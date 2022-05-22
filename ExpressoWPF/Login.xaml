@@ -39,11 +39,11 @@
                     <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click" Cursor="Hand"/>
                 </StackPanel>
                 <TextBlock HorizontalAlignment="Center" Margin="0,77,0,0" TextWrapping="Wrap" Text="I N I C I O" VerticalAlignment="Top" FontSize="20" Foreground="{DynamicResource AccentColor}" FontFamily="Monument Extended" />
-                <TextBox HorizontalAlignment="Center" Margin="0,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" Background="{x:Null}" Foreground="{DynamicResource AccentColor}" BorderBrush="{DynamicResource AccentColor}" SelectionBrush="{DynamicResource TextFourthColor}"/>
+                <TextBox x:Name="txtUserName" HorizontalAlignment="Center" Margin="0,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" Background="{x:Null}" Foreground="{DynamicResource AccentColor}" BorderBrush="{DynamicResource AccentColor}" SelectionBrush="{DynamicResource TextFourthColor}" Cursor="Arrow"/>
                 <TextBlock HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" Text="U S U A R I O" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" />
-                <TextBox HorizontalAlignment="Center" Margin="0,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Height="31" Background="{x:Null}" Foreground="{DynamicResource AccentColor}" BorderBrush="{DynamicResource AccentColor}" SelectionBrush="{DynamicResource TextFourthColor}"/>
+                <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Width="204" Height="31" Background="{x:Null}" Foreground="{DynamicResource AccentColor}" BorderBrush="{DynamicResource AccentColor}" SelectionBrush="{DynamicResource TextFourthColor}"/>
                 <TextBlock HorizontalAlignment="Center" Margin="0,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" ><Run Text="C O N T R A S E"/><Run Language="es-es" Text=" Ñ A"/></TextBlock>
-                <Button x:Name="LoginBtn" Content="Iniciar Sesion" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top" Height="31" Width="204" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource MaterialDesignColumnHeader}" Click="LoginBtn_Click"/>
+                <Button x:Name="btnLogin" Content="Iniciar Sesion" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top" Height="31" Width="204" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource MaterialDesignColumnHeader}" Click="btnLogin_Click"/>
 
             </Grid>
         </Grid>

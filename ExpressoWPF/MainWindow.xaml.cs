@@ -32,130 +32,68 @@ namespace ExpressoWPF
             Tg_Btn.IsChecked = false;
         }
 
-        private void btnHome_MouseEnter(object sender, MouseEventArgs e)
+        private void onMouseEnter(Button btn, string text)
         {
             if (Tg_Btn.IsChecked == false)
             {
-                Popup.PlacementTarget = btnHome;
+                Popup.PlacementTarget = btn;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Inicio";
+                Header.PopupText.Text = text;
             }
         }
 
-        private void btnHome_MouseLeave(object sender, MouseEventArgs e)
+        private void btnHome_MouseEnter(object sender, MouseEventArgs e)
         {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
+            onMouseEnter(btnHome, "Inicio");
         }
 
         private void btnPointOfSale_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnPointOfSale;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Nueva Orden";
-            }
-        }
-
-        private void btnPointOfSale_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
+            onMouseEnter(btnPointOfSale, "Nueva Orden");
         }
 
         private void btnPreviousSales_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnPreviousSales;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Ordenes Previas";
-            }
-        }
-
-        private void btnPreviousSales_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
-
-        private void btnProducts_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
+            onMouseEnter(btnPreviousSales, "Ordenes Previas");
         }
 
         private void btnProducts_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnProducts;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Productos";
-            }
+            onMouseEnter(btnProducts, "Productos");
         }
 
         private void btnLocations_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnLocations;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Ubicaciones";
-            }
-        }
-
-        private void btnLocations_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
-        }
-
-        private void btnSettings_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnSettings;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Configuracion";
-            }
-        }
-
-        private void btnSettings_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
+            onMouseEnter(btnLocations, "Ubicaciones");
         }
 
         private void btnProductCategories_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (Tg_Btn.IsChecked == false)
-            {
-                Popup.PlacementTarget = btnProductCategories;
-                Popup.Placement = PlacementMode.Right;
-                Popup.IsOpen = true;
-                Header.PopupText.Text = "Categorias";
-            }
+            onMouseEnter(btnProductCategories, "Categorias de Producto");
         }
 
-        private void btnProductCategories_MouseLeave(object sender, MouseEventArgs e)
+        private void btnUsers_MouseEnter(object sender, MouseEventArgs e)
         {
-            Popup.Visibility = Visibility.Collapsed;
-            Popup.IsOpen = false;
+            onMouseEnter(btnUsers, "Usuarios");
         }
+
+        private void btnSettings_MouseEnter(object sender, MouseEventArgs e)
+        {
+            onMouseEnter(btnSettings, "Configuracion");
+        }
+
+        private void btnClients_MouseEnter(object sender, MouseEventArgs e)
+        {
+            onMouseEnter(btnClients, "Clientes");
+        }
+
         // End: MenuLeft PopupButton //
 
         // Start: Button Close | Restore | Minimize 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -163,6 +101,15 @@ namespace ExpressoWPF
             WindowState = WindowState.Minimized;
         }
         // End: Button Close | Restore | Minimize
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            fContainer.Navigate(new System.Uri("Pages/UserPages/Main.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void btnClients_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
@@ -196,12 +143,35 @@ namespace ExpressoWPF
 
         private void btnProductCategories_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/ProductCategories.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Pages/ProductCategoryPages/Main.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        // Window Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SessionClass.sessionUserID = 3;
+            switch (SessionClass.sessionRole)
+            {
+                case "Cajero":
+                    btnClients.Visibility = Visibility.Collapsed;
+                    btnProducts.Visibility = Visibility.Collapsed;
+                    btnProductCategories.Visibility = Visibility.Collapsed;
+                    btnLocations.Visibility = Visibility.Collapsed;
+                    btnUsers.Visibility = Visibility.Collapsed;
+                    btnClients.Visibility = Visibility.Collapsed;
+                    break;
+                case "Gerente":
+                    btnUsers.Visibility = Visibility.Collapsed;
+                    btnClients.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
+
+        // Mouse Leave
+
+        public void OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            Popup.Visibility = Visibility.Collapsed;
+            Popup.IsOpen = false;
         }
     }
 }

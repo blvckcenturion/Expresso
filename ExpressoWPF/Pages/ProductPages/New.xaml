@@ -11,46 +11,40 @@
       TextBlock.FontSize="20"
       Loaded="Page_Loaded"
       Title="New">
-
-    <Grid>
-        <Border Margin="200 100" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Nuevo Producto" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="Monument Extended" FontSize="25" TextAlignment="Center"/>
-
-                </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
-                    <TextBox x:Name="txtProductName" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Precio Base:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
-                    <TextBox x:Name="txtProductBasePrice" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Descripcion:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
-                    <TextBox x:Name="txtProductDescription" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
-                </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Categoria:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
-                    <ComboBox x:Name="cbCategories" FontFamily="SF Pro Display" Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignCheckBoxDisabled}" Background="{DynamicResource PrimaryBackgroundColor}"/>
-                </StackPanel>
-                <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button x:Name="btnInsert" Margin="5" Width="300" Content="Agregar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click" FontWeight="Normal"/>
-                </StackPanel>
-
-
-            </Grid>
-        </Border>
-    </Grid>
+    <Border Margin="200 100" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Nuevo Producto" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="Monument Extended" FontSize="25" TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <TextBox x:Name="txtProductName" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Precio Base:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <TextBox x:Name="txtProductBasePrice" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Descripcion:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <TextBox x:Name="txtProductDescription" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Categoria:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <ComboBox x:Name="cbCategories" FontFamily="SF Pro Display" Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignCheckBoxDisabled}" Background="{x:Null}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="btnInsert" Margin="5" Width="300" Content="Agregar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click" FontWeight="Normal"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>
