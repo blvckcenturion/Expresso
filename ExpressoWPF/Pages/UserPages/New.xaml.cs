@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Net.Mail;
+using System.Configuration;
+using System.Net.Configuration;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 using System.Data;
 using Expresso.Implementation;
 using ExpressoWPF.Controls;
@@ -40,18 +39,69 @@ namespace ExpressoWPF.Pages.UserPages
             ValidatedUser vu = Main.ValidateUser(txtFirstName.Text, txtLastName.Text, txtSecondLastName.Text, txtPhone.Text, txtAddress.Text, txtCI.Text, txtEmail.Text, cbGender.Text, cbRoles.Text, cbTown.Text, dpBirthDate.SelectedDate.ToString());
             if (vu.IsValidated)
             {
+                vu.Employee.UserName = generateUserName(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.CI, vu.Employee.Gender, vu.Employee.Role);
+                vu.Employee.Password = generateUserPassword(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.BirthDate, vu.Employee.Role);
                 try
                 {
                     employee = vu.Employee;
-
+                    int n = employeeType.Insert(employee);
+                    if (n > 0)
+                    {
+                        sendEmail(employee.Email, employee.UserName, employee.Password);
+                        new PopUpWindow(1, "Insercion de producto realizada de forma exitosa.\n" + DateTime.Now).Show();
+                    } else
+                    {
+                        new PopUpWindow(0, "No se realizarion inserciones\n" + DateTime.Now).Show();
+                    }
                 } catch (Exception ex)
                 {
-                    new PopUpWindow(1, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
+                    new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
                 }
-                
             }
         }
-        
+
+
+        private void sendEmail(string to, string userName, string password)
+        {
+            MailMessage correo = new MailMessage();
+            // Correo: expresso.app.bolivia@gmail.com
+            // Contra: $Univalle2022
+            correo.From = new MailAddress("expresso.app.bolivia@gmail.com", "Santiago Sarabia", System.Text.Encoding.UTF8);//Correo de salida
+            correo.To.Add(to);
+            correo.Subject = "Login de Usuario para Expresso.";
+            correo.Body = "Nombre de Usuario: " + userName + "\n Contraseña: " + password;
+            correo.IsBodyHtml = true;
+            correo.Priority = MailPriority.Normal;
+            SmtpClient smtp = new SmtpClient();
+            smtp.UseDefaultCredentials = false;
+            smtp.Host = "smtp.gmail.com"; //Host del servidor de correo
+            smtp.Port = 587; //Puerto de salida
+            smtp.Credentials = new System.Net.NetworkCredential("expresso.app.bolivia@gmail.com", "$Univalle2022");//Cuenta de correo
+            ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+            smtp.EnableSsl = true;
+            smtp.Send(correo);
+            Main.SwitchTabs(0);
+        }
+
+
+        private string generateUserName(string firstName, string lastName, string ci, char gender, string role)
+        {
+            firstName = firstName.Substring(0,1);
+            lastName = lastName.Substring(0, 1);
+            ci = ci.Substring(ci.Length - 3,2);
+            role = role.Substring(0,1);
+            string unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds().ToString();
+            unixTime = unixTime.Substring(unixTime.Length-7);
+            return firstName + lastName +gender + role + ci + unixTime;
+        }
+
+        private string generateUserPassword(string firstName, string lastName, DateTime date, string role)
+        {
+            firstName = firstName.ToUpper() + date.Year;
+            lastName = lastName.ToLower() + date.Minute;
+            return firstName + lastName + role.Substring(0,3) + DateTime.Now.Second;
+        }
+
         private void SelectTowns()
         {
             DataTable categories = new DataTable();

@@ -29,6 +29,34 @@ namespace Expresso.Implementation
             }
         }
 
+        public bool Exists(string productCategoryName)
+        {
+            bool exists = false;
+            string query = @"SELECT count(id) FROM ProductCategory WHERE LOWER(productCategoryName)=LOWER(@ProductCategoryName) AND status=1";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@ProductCategoryName", productCategoryName);
+            SqlDataReader reader = null;
+            try
+            {
+                reader = ExecuteDataReaderCommand(command);
+                while (reader.Read())
+                {
+                    if (byte.Parse(reader[0].ToString()) != 0) exists = true;
+                }
+                return exists;
+            }
+            catch (Exception ex)
+            {
+                //Log
+                throw ex;
+            }
+            finally
+            {
+                command.Connection.Close();
+                reader.Close();
+            }
+        }
+
         public ProductCategory Get(byte id)
         {
             ProductCategory t = null;
@@ -91,8 +119,8 @@ namespace Expresso.Implementation
 
         public int Insert(ProductCategory t)
         {
-            string query = @"INSERT INTO ProductCategory(productCategoryName, userID) 
-                             VALUES(@productCategoryName, @userID)";
+            string query = @"INSERT INTO ProductCategory(productCategoryName,productCategoryDescription, userID) 
+                             VALUES(@productCategoryName,@productCategoryDescription, @userID)";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@productCategoryName", t.ProductCategoryName);
             command.Parameters.AddWithValue("@productCategoryDescription", t.ProductCategoryDescription);
@@ -116,6 +144,23 @@ namespace Expresso.Implementation
             {
                 return ExecuteDataTableCommand(command);
             } catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable Select(string productCategoryName)
+        {
+            string query = @"SELECT P.id, P.productCategoryName AS 'Nombre del Producto', P.productCategoryDescription AS 'Descripcion del Producto', P.registerDate AS 'Fecha de Creacion'
+                             FROM ProductCategory P 
+                             WHERE P.status = 1 AND P.productCategoryName LIKE LOWER(@ProductCategoryName)";
+            SqlCommand command = CreateBasicCommand(query);
+            command.Parameters.AddWithValue("@ProductCategoryName", "%" + productCategoryName + "%");
+            try
+            {
+                return ExecuteDataTableCommand(command);
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

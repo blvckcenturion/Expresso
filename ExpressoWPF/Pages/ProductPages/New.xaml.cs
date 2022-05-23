@@ -49,10 +49,6 @@ namespace ExpressoWPF.Pages.ProductPages
                     if (n > 0)
                     {
                         new PopUpWindow(1, "Insercion de producto realizada de forma exitosa.\n" + DateTime.Now).Show();
-                        txtProductBasePrice.Text = String.Empty;
-                        txtProductName.Text = String.Empty;
-                        txtProductDescription.Text = String.Empty;
-                        cbCategories.Text = String.Empty;
                         Main.SwitchTabs(0);
                     }
                     else

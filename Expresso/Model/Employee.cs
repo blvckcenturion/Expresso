@@ -22,6 +22,7 @@ namespace Expresso.Model
         public string Role { get; set; }
         public string Photo { get; set; }
         public byte TownID { get; set; }
+        public string TownName { get; set; }
         public string Email { get; set; }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Expresso.Model
         /// <param name="birthDate"></param>
         /// <param name="role"></param>
         /// <param name="userID"></param>
-        public Employee(string userName, string password, string firstName, string lastName, string secondLastName, string cI, string phones, string address, char gender, DateTime birthDate, string role, string email)
+        public Employee(string userName, string password, string firstName, string lastName, string secondLastName, string cI, string phones, string address, char gender, DateTime birthDate, string role, string email, string townName)
         {
             UserName = userName;
             Password = password;
@@ -94,8 +95,41 @@ namespace Expresso.Model
             BirthDate = birthDate;
             Role = role;
             Email = email;
+            TownName = townName;
+        }
+
+        /// <summary>
+        /// GET
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <param name="v3"></param>
+        /// <param name="v4"></param>
+        /// <param name="v5"></param>
+        /// <param name="v6"></param>
+        /// <param name="v7"></param>
+        /// <param name="v8"></param>
+        /// <param name="dateTime"></param>
+        /// <param name="v9"></param>
+        /// <param name="v10"></param>
+        public Employee(byte id, string phones, string address, string role, string townName, string email)
+        {
+            Id = id;
+            Phones = phones;
+            Address = address;
+            Role = role;
+            TownName = townName;
+            Email = email;
+        }
+
+        public Employee(string firstName, string lastName, DateTime birthDate, string role, string userName)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            BirthDate = birthDate;
+            Role = role;
+            UserName = userName;
         }
     }
-
-
 }

@@ -51,8 +51,6 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\List.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\Main.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductPages\New.baml
-C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\ErrorPopUp.g.cs
-C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\ErrorPopUp.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\PopUpWindow.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Controls\PopUpWindow.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ProductCategoryPages\List.g.cs
@@ -67,3 +65,7 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\UserPages\Ma
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\UserPages\List.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\UserPages\Main.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\UserPages\New.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Reset.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Reset.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\ChangePassword.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\ChangePassword.baml

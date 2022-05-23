@@ -43,7 +43,8 @@
                 <TextBlock HorizontalAlignment="Center" Margin="0,149,0,0" TextWrapping="Wrap" Text="U S U A R I O" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" />
                 <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Width="204" Height="31" Background="{x:Null}" Foreground="{DynamicResource AccentColor}" BorderBrush="{DynamicResource AccentColor}" SelectionBrush="{DynamicResource TextFourthColor}"/>
                 <TextBlock HorizontalAlignment="Center" Margin="0,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" ><Run Text="C O N T R A S E"/><Run Language="es-es" Text=" Ñ A"/></TextBlock>
-                <Button x:Name="btnLogin" Content="Iniciar Sesion" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top" Height="31" Width="204" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource MaterialDesignColumnHeader}" Click="btnLogin_Click"/>
+                <Button x:Name="btnLogin" Content="Iniciar Sesion" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Height="31" Width="204" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnLogin_Click" Cursor="Hand"/>
+                <Button x:Name="btnReset" Visibility="Collapsed" Content="Olvide Mi Contraseña" HorizontalAlignment="Center" Margin="0,430,0,0" VerticalAlignment="Top" Height="31" Width="204" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnReset_Click" Cursor="Hand"/>
 
             </Grid>
         </Grid>

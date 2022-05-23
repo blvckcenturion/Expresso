@@ -75,12 +75,15 @@ namespace ExpressoWPF.Pages.ProductPages
             }
         }
 
-        private void scaleDown()
+        private void scaleDown(bool select)
         {
             MainContent.SetValue(Grid.ColumnSpanProperty, 1);
             dgvData.FontSize = 14;
-            dgvData.ItemsSource = null;
-            SelectProducts();
+            if (select)
+            {
+                dgvData.ItemsSource = null;
+                SelectProducts();
+            }
             OptionsContent.Visibility = Visibility.Visible;
         }
 
@@ -110,7 +113,7 @@ namespace ExpressoWPF.Pages.ProductPages
                         txtProductName.Text = product.ProductName;
                         txtProductDescription.Text = product.ProductDescription;
                         cbCategories.SelectedIndex = cbCategories.Items.IndexOf(product.ProductCategoryName);
-                        scaleDown();
+                        scaleDown(false);
                     }
                 } catch(Exception ex)
                 {

@@ -1,6 +1,6 @@
-﻿
+﻿C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\App.xaml;;
-FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\ErrorPopUp.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\ChangePassword.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\MenuItem.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\PopUpWindow.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\UserPopup.xaml;;
@@ -21,4 +21,5 @@ FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\Settings.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\UserPages\List.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\UserPages\Main.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\UserPages\New.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Reset.xaml;;
 

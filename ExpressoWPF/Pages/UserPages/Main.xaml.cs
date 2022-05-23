@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Expresso.Model;
+using Expresso.Implementation;
 
 namespace ExpressoWPF.Pages.UserPages
 {
@@ -66,6 +67,7 @@ namespace ExpressoWPF.Pages.UserPages
             date = date.Trim();
             ValidatedUser vu = new ValidatedUser();
             string error = "";
+            EmployeeImpl employeeImpl = new EmployeeImpl();
 
             if(firstName != string.Empty
                 && firstName != string.Empty 
@@ -78,13 +80,20 @@ namespace ExpressoWPF.Pages.UserPages
                 && town != string.Empty
                 && date != string.Empty)
             {
-                if(firstName.Length <= 120 && lastName.Length <= 120)
+                if(firstName.Length <= 120 && lastName.Length <= 120 & ci.Length <= 15)
                 {
                     if(IsValidEmail(email))
                     { 
-                        vu.Employee = new Employee("sapo", "sapo", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role,email) ;
-                        vu.IsValidated = true;
-                        return vu;
+                        if(!employeeImpl.Exists(email))
+                        {
+                            vu.Employee = new Employee("sapo", "sapo", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role, email, town);
+                            vu.IsValidated = true;
+                            return vu;
+                        } else
+                        {
+                            error = "El Email ingresado ya esta en uso.";
+                        }
+                        
                     } else
                     {
                         error = "El Email ingresado no es valido.";
@@ -97,7 +106,6 @@ namespace ExpressoWPF.Pages.UserPages
             {
                 error = "Existen campos en blanco que son requeridos.";
             }
-
             new PopUpWindow(0, error).Show();
             vu.IsValidated = false;
             return vu;
