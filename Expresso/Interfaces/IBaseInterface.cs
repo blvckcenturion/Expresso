@@ -14,6 +14,7 @@ namespace Expresso.Interfaces
         int Insert(T t);
         int Update(T t);
         int Delete(T t);
+        T Get(byte id);
         #endregion
     }
 }

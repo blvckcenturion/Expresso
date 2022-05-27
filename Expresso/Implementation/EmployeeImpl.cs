@@ -33,8 +33,8 @@ namespace Expresso.Implementation
         public int Insert(Employee t)
         {
             TownImpl townImpl = new TownImpl();
-            string query = @"INSERT INTO Employee(username, passwordHash, firstName, lastName, secondLastName, CI, phones, address, gender, birthDate, userID, role, townID, email)
-                             VALUES(@Username, HASHBYTES('md5', @Password), @FirstName, @LastName, @SecondLastName, @CI, @Phones, @Address, @Gender, @BirthDate, @UserID, @Role, @TownID, @Email);";
+            string query = @"INSERT INTO Employee(username, passwordHash, firstName, lastName, secondLastName, CI, phones, address, gender, birthDate, userID, role, townID, email, changePassword)
+                             VALUES(@Username, HASHBYTES('md5', @Password), @FirstName, @LastName, @SecondLastName, @CI, @Phones, @Address, @Gender, @BirthDate, @UserID, @Role, @TownID, @Email, 1);";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@Username", t.UserName);
             command.Parameters.AddWithValue("@Password", t.Password).SqlDbType = SqlDbType.VarChar;

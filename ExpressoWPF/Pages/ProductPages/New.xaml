@@ -11,7 +11,7 @@
       TextBlock.FontSize="20"
       Loaded="Page_Loaded"
       Title="New">
-    <Border Margin="200 100" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
+    <Border Margin="10" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>

@@ -16,19 +16,19 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainContent" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="10">
-            <Grid Margin="20">
+            <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition Height="10*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Margin="10">
+                <Grid Grid.Row="0" Margin="5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3*"/>
                         <ColumnDefinition Width="1*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox Grid.Column="0" x:Name="txtFilter" Margin="5 20" Foreground="{DynamicResource PrimaryTextColor}" materialDesign:HintAssist.Hint="Nombre del Empleado" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Cursor="Arrow"/>
+                    <TextBox Grid.Column="0" x:Name="txtFilter" Foreground="{DynamicResource PrimaryTextColor}" materialDesign:HintAssist.Hint="Nombre del Empleado" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Cursor="Arrow"/>
                     <Button Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnFilter" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnFilter_Click">
                         Filtrar
                     </Button>
@@ -38,7 +38,7 @@
                 </Grid>
                 <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="18" SelectionChanged="dgvData_SelectionChanged" />
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
-                    <TextBlock x:Name="txtInfo" Text="Categoria:" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
+                    <TextBlock x:Name="txtInfo" Text="Categoria:" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -50,7 +50,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="Detalles" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="{DynamicResource SecondaryAccentColor}" FontFamily="Monument Extended"/>
+                <TextBlock Text="Detalles" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="{DynamicResource SecondaryAccentColor}" FontFamily="Monument Extended"/>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*"/>

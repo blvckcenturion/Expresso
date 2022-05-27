@@ -26,65 +26,65 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Nuevo Usuario" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="Monument Extended" FontSize="25" TextAlignment="Center"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtFirstName" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Primer Apellido:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Primer Apellido:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtLastName" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Segundo Apellido:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Segundo Apellido:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtSecondLastName" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Telefono:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Telefono:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtPhone" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Direccion de Contacto:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Direccion de Contacto:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtAddress" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Numero de Identificacion:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Numero de Identificacion:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtCI" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Email:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="3" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Email:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <TextBox x:Name="txtEmail" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Fecha de Nacimiento:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Fecha de Nacimiento:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <DatePicker x:Name="dpBirthDate" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" />
             </StackPanel>
-            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Genero:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Genero:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <ComboBox x:Name="cbGender"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
                     <ComboBoxItem Content="Masculino"/>
                     <ComboBoxItem Content="Femenino"/>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Rol de Usuario:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Rol de Usuario:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <ComboBox x:Name="cbRoles"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
                     <ComboBoxItem Content="Administrador"/>
                     <ComboBoxItem Content="Gerente"/> 
                     <ComboBoxItem Content="Cajero"/>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"/>
                 <ComboBox x:Name="cbTown"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
                     <ComboBoxItem Content="Administrador"/>
                     <ComboBoxItem Content="Gerente"/>
                     <ComboBoxItem Content="Cajero"/>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Grid.Row="5" Grid.ColumnSpan="3" Orientation="Horizontal"  VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button x:Name="btnInsert" Margin="5" Width="300" Content="Agregar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click" FontWeight="Normal"/>
             </StackPanel>
             
