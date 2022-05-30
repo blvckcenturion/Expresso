@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\App.xaml
-251300058123
+28868144913
 
-26-2066771273
+29-910736271
 16-1710838714
-ChangePassword.xaml;Controls\MenuItem.xaml;Controls\PopUpWindow.xaml;Controls\UserPopup.xaml;Login.xaml;MainWindow.xaml;Pages\Home.xaml;Pages\Locations.xaml;Pages\NewOrder.xaml;Pages\PreviousSales.xaml;Pages\ProductCategories.xaml;Pages\ProductCategoryPages\List.xaml;Pages\ProductCategoryPages\Main.xaml;Pages\ProductCategoryPages\New.xaml;Pages\ProductPages\List.xaml;Pages\ProductPages\Main.xaml;Pages\ProductPages\New.xaml;Pages\Settings.xaml;Pages\UserPages\List.xaml;Pages\UserPages\Main.xaml;Pages\UserPages\New.xaml;Reset.xaml;Resources\Icons.xaml;Styles\Styles.xaml;Theme\AppTheme.xaml;
+ChangePassword.xaml;Controls\MenuItem.xaml;Controls\PopUpWindow.xaml;Controls\UserPopup.xaml;Login.xaml;MainWindow.xaml;Pages\Home.xaml;Pages\Locations.xaml;Pages\NewOrder.xaml;Pages\PreviousSales.xaml;Pages\ProductCategories.xaml;Pages\ProductCategoryPages\List.xaml;Pages\ProductCategoryPages\Main.xaml;Pages\ProductCategoryPages\New.xaml;Pages\ProductPages\List.xaml;Pages\ProductPages\Main.xaml;Pages\ProductPages\New.xaml;Pages\Settings.xaml;Pages\SettingsPages\ChangePassword.xaml;Pages\SettingsPages\ChangeUserInformation.xaml;Pages\SettingsPages\Main.xaml;Pages\UserPages\List.xaml;Pages\UserPages\Main.xaml;Pages\UserPages\New.xaml;Reset.xaml;Resources\Icons.xaml;Styles\Styles.xaml;Theme\AppTheme.xaml;
 
 False
 

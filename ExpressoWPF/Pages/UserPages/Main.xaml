@@ -23,7 +23,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btnSection1" Grid.Column="0" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Click="btnSection1_Click" >
+                        <Button x:Name="btnSection1" Grid.Column="0" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Click="btnSection1_Click" Cursor="Hand" >
                             Lista de Usuarios
                         </Button>
                         <Button x:Name="btnSection2" Grid.Column="1" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Click="btnSection2_Click" >

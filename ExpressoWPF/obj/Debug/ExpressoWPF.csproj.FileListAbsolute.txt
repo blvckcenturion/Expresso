@@ -69,3 +69,9 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Reset.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Reset.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\ChangePassword.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\ChangePassword.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\Main.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\Main.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangePassword.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangeUserInformation.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangePassword.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangeUserInformation.baml

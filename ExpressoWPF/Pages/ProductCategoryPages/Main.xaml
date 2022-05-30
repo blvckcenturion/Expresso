@@ -17,16 +17,17 @@
                     <RowDefinition Height="8.5*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Vertical" Grid.Row="0">
-                    <TextBlock Text="Categorias de Productos" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Foreground="{DynamicResource AccentColor}" FontFamily="Monument Extended"/>
+                    <TextBlock Text="Categorias de Producto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Foreground="{DynamicResource AccentColor}" FontFamily="Monument Extended"/>
                     <Grid Height="50">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="531*"/>
+                            <ColumnDefinition Width="19*"/>
+                            <ColumnDefinition Width="550*"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="btnSection1" Grid.Column="0" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnSection1_Click" >
+                        <Button x:Name="btnSection1" Grid.Column="0" Margin="10,9,10,9" FontFamily="Monument Extended" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Click="btnSection1_Click" Cursor="Hand" Grid.ColumnSpan="2" >
                             Lista de Categorias
                         </Button>
-                        <Button x:Name="btnSection2" Grid.Column="1" Margin="10 0 10 0" FontFamily="Monument Extended" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnSection2_Click" >
+                        <Button x:Name="btnSection2" Grid.Column="2" Margin="10,9,10,9" FontFamily="Monument Extended" FontSize="20" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Click="btnSection2_Click" >
                             Agregar Categoria
                         </Button>
                     </Grid>
