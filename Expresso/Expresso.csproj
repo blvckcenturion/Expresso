@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\BaseImpl.cs" />
+    <Compile Include="Implementation\ConfigClass.cs" />
+    <Compile Include="Implementation\ConfigImpl.cs" />
     <Compile Include="Implementation\EmployeeImpl.cs" />
     <Compile Include="Implementation\ProductCategoryImpl.cs" />
     <Compile Include="Implementation\ProductImpl.cs" />

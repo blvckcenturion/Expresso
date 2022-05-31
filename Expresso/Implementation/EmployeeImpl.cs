@@ -33,8 +33,8 @@ namespace Expresso.Implementation
         public int Insert(Employee t)
         {
             TownImpl townImpl = new TownImpl();
-            string query = @"INSERT INTO Employee(username, passwordHash, firstName, lastName, secondLastName, CI, phones, address, gender, birthDate, userID, role, townID, email, changePassword)
-                             VALUES(@Username, HASHBYTES('md5', @Password), @FirstName, @LastName, @SecondLastName, @CI, @Phones, @Address, @Gender, @BirthDate, @UserID, @Role, @TownID, @Email, 1);";
+            string query = @"INSERT INTO Employee(username, passwordHash, firstName, lastName, secondLastName, CI, phones, address, gender, birthDate, userID, role, townID, email, changePassword, photo)
+                             VALUES(@Username, HASHBYTES('md5', @Password), @FirstName, @LastName, @SecondLastName, @CI, @Phones, @Address, @Gender, @BirthDate, @UserID, @Role, @TownID, @Email, 1, @Photo);";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@Username", t.UserName);
             command.Parameters.AddWithValue("@Password", t.Password).SqlDbType = SqlDbType.VarChar;
@@ -50,6 +50,7 @@ namespace Expresso.Implementation
             command.Parameters.AddWithValue("@TownID", townImpl.Get(t.TownName).Id);
             command.Parameters.AddWithValue("@Email", t.Email);
             command.Parameters.AddWithValue("@Address", t.Address);
+            command.Parameters.AddWithValue("@Photo", t.Photo);
             try
             {
                 return ExecuteBasicCommand(command);
@@ -63,7 +64,7 @@ namespace Expresso.Implementation
         public Employee Get(byte id)
         {
             Employee t = null;
-            string query = @"SELECT E.id, E.phones, E.address, E.role, T.townName, E.email
+            string query = @"SELECT E.id, E.phones, E.address, E.role, T.townName, E.email, E.photo
                              FROM Employee E
                              LEFT JOIN Town T ON T.id = E.townID
                              LEFT JOIN Province P ON T.provinceID = P.id
@@ -83,7 +84,8 @@ namespace Expresso.Implementation
                         reader[2].ToString(),
                         reader[3].ToString(),
                         reader[4].ToString(),
-                        reader[5].ToString()
+                        reader[5].ToString(),
+                        reader[6].ToString()
                         );
                 }
             }
@@ -169,7 +171,7 @@ namespace Expresso.Implementation
 
         public DataTable Login(string userName, string password)
         {
-            string query = @"SELECT E.id, E.userName, E.firstName, E.lastName, ISNULL(E.secondLastName, ''), E.CI, E.phones, E.address, E.gender, E.birthDate, E.role, T.townName, E.email, E.changePassword
+            string query = @"SELECT E.id, E.userName, E.firstName, E.lastName, ISNULL(E.secondLastName, ''), E.CI, E.phones, E.address, E.gender, E.birthDate, E.role, T.townName, E.email, E.changePassword, E.photo
                              FROM Employee E
                              LEFT JOIN Town T ON T.id = E.townID
                              LEFT JOIN Province P ON T.provinceID = P.id
@@ -217,7 +219,7 @@ namespace Expresso.Implementation
 
         public DataTable Select()
         {
-            string query = @"SELECT E.id, E.userName AS 'Nombre de Usuario', E.firstName AS 'Nombre', E.lastName AS 'Primer Apellido', ISNULL(E.secondLastName, '') AS 'Segundo Apellido', E.email AS 'Email',
+            string query = @"SELECT E.photo AS 'photo', E.id, E.userName AS 'Nombre de Usuario', E.firstName AS 'Nombre', E.lastName AS 'Primer Apellido', ISNULL(E.secondLastName, '') AS 'Segundo Apellido', E.email AS 'Email',
                              E.CI AS 'Numero de Identificacion', E.phones AS 'Telefono', E.address AS 'Direccion', E.gender AS 'Genero', E.birthDate AS 'Fecha de Nacimiento',
                              E.role AS 'Rol de Usuario', P.provinceName AS 'Nombre de Provincia', T.townName AS 'Nombre de Ciudad'
                              FROM Employee E
@@ -238,7 +240,7 @@ namespace Expresso.Implementation
 
         public DataTable Select(string employeeName)
         {
-            string query = @"SELECT E.id, E.userName AS 'Nombre de Usuario', E.firstName AS 'Nombre', E.lastName AS 'Primer Apellido', ISNULL(E.secondLastName, '') AS 'Segundo Apellido', E.email AS 'Email',
+            string query = @"SELECT E.photo AS 'photo', E.id, E.userName AS 'Nombre de Usuario', E.firstName AS 'Nombre', E.lastName AS 'Primer Apellido', ISNULL(E.secondLastName, '') AS 'Segundo Apellido', E.email AS 'Email',
                              E.CI AS 'Numero de Identificacion', E.phones AS 'Telefono', E.address AS 'Direccion', E.gender AS 'Genero', E.birthDate AS 'Fecha de Nacimiento',
                              E.role AS 'Rol de Usuario', P.provinceName AS 'Nombre de Provincia', T.townName AS 'Nombre de Ciudad'
                              FROM Employee E
@@ -262,7 +264,7 @@ namespace Expresso.Implementation
         {
             TownImpl townImpl = new TownImpl();
             string query = @"UPDATE Employee
-                             SET role=@Role, email=@Email, townID=@TownID, address=@Address, phones=@Phones, lastUpdate=CURRENT_TIMESTAMP, userID=@userID
+                             SET role=@Role, email=@Email, townID=@TownID, address=@Address, phones=@Phones, lastUpdate=CURRENT_TIMESTAMP, userID=@userID, photo=@Photo
                              WHERE id=@id";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@UserID", SessionClass.sessionUserID);
@@ -272,6 +274,7 @@ namespace Expresso.Implementation
             command.Parameters.AddWithValue("@Address", t.Address);
             command.Parameters.AddWithValue("@Phones", t.Phones);
             command.Parameters.AddWithValue("@id", t.Id);
+            command.Parameters.AddWithValue("@Photo", t.Photo);
             try
             {
                 return ExecuteBasicCommand(command);

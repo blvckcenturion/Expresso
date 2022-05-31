@@ -86,7 +86,7 @@ namespace ExpressoWPF.Pages.UserPages
                     { 
                         if(!employeeImpl.Exists(email))
                         {
-                            vu.Employee = new Employee("sapo", "sapo", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role, email, town);
+                            vu.Employee = new Employee("", "", firstName, lastName, secondLastName, ci, phone, address, gender == "Masculino" ? 'M' : 'F', DateTime.Parse(date), role, email, town);
                             vu.IsValidated = true;
                             return vu;
                         } else

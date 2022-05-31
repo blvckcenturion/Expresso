@@ -39,18 +39,25 @@ namespace ExpressoWPF
                 {
                     if(txtNewPassword.Password == txtRepeatPassword.Password )
                     {
-                        try
+                        if (txtNewPassword.Password.Length > 10) 
                         {
-                            int n = employeeImpl.Update(UserId, txtNewPassword.Password);
-                            if(n > 0)
+                            try
                             {
-                                new PopUpWindow(1, "Registro actualizado de forma exitosa.\n" + DateTime.Now).Show();
-                                this.Close();
-                                return;
+                                int n = employeeImpl.Update(UserId, txtNewPassword.Password);
+                                if (n > 0)
+                                {
+                                    new PopUpWindow(1, "Registro actualizado de forma exitosa.\n" + DateTime.Now).Show();
+                                    this.Close();
+                                    return;
+                                }
                             }
-                        } catch (Exception ex)
+                            catch (Exception ex)
+                            {
+                                new PopUpWindow(0, "No se pudo realizar la actualizacion.").Show();
+                            }
+                        } else
                         {
-                            new PopUpWindow(0, "No se pudo realizar la actualizacion.").Show(); 
+                            error = "Error, la contraseña debe tener un minimo de 10 caracteres de longitud.";
                         }
                     } else
                     {

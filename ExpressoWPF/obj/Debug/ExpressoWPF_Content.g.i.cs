@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("isotype.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pages/userpages/a.jpg")]
 
 

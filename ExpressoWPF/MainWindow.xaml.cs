@@ -149,6 +149,9 @@ namespace ExpressoWPF
         // Window Events
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            txtName.Text = SessionClass.sessionFirstName + " " + SessionClass.sessionLastName + (SessionClass.sessionSecondLastName != "" ? " " + SessionClass.sessionSecondLastName : "");
+            txtRole.Text = SessionClass.sessionRole;
+            profileImg.ImageSource = new BitmapImage(new Uri(ConfigClass.pathPhotoEmployee + SessionClass.sessionPhoto));
             switch (SessionClass.sessionRole)
             {
                 case "Cajero":

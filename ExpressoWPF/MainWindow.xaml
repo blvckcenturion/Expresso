@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpressoWPF"
+        FontFamily="SF Pro Display"
         mc:Ignorable="d"
         Background="{DynamicResource PrimaryBackgroundColor}"
         Title="MainWindow" Height="850" Width="1200" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Loaded="Window_Loaded">
@@ -79,6 +80,7 @@
                     </Button>
 
                 </StackPanel>
+
                 <!-- End: MenuItem -->
 
                 <!-- Start: Popup User Control -->
@@ -92,7 +94,7 @@
 
         <Grid Grid.Column="1" Grid.RowSpan="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="70"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -130,6 +132,26 @@
                        NavigationUIVisibility="Hidden">
 
             </Frame>
+            <Grid Width="300"  Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Border CornerRadius="50" Margin="5" Grid.Column="0">
+                    <Border.Background>
+                        <ImageBrush x:Name="profileImg" Stretch="UniformToFill" ImageSource="C:\Users\SANTIAGO\Desktop\Isotype.png"/>
+                    </Border.Background>
+                </Border>
+                <Grid Grid.Column="1" Margin="10 0 0 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="txtRole" Grid.Row="0" Text="Administrador" VerticalAlignment="Center" Foreground="{DynamicResource AccentColor}" FontSize="20"/>
+                    <TextBlock x:Name="txtName" Grid.Row="1" Text="Santiago Sarabia Sainz" VerticalAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontSize="20"/>
+                </Grid>
+
+            </Grid>
 
         </Grid>
     </Grid>

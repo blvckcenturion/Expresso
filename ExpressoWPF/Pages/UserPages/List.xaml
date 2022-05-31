@@ -36,7 +36,17 @@
                         Mostrar Todos
                     </Button>
                 </Grid>
-                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="18" SelectionChanged="dgvData_SelectionChanged" />
+                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="18" SelectionChanged="dgvData_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Fotografia" Width="SizeToCells" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Width="80" Height="80" Source="{Binding photo}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <TextBlock x:Name="txtInfo" Text="Categoria:" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
                 </StackPanel>
@@ -46,7 +56,7 @@
             <Grid Grid.Column="1" Margin="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="9*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
@@ -62,6 +72,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Column="0" Grid.Row="0" Text="Correo:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
                     <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtEmail" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
@@ -78,6 +89,14 @@
                     </ComboBox>
                     <TextBlock Grid.Column="0" Grid.Row="4" Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
                     <ComboBox Grid.Column="1" Grid.Row="4" x:Name="cbTown" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignCheckBoxDisabled}" Background="{x:Null}"/>
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Imagen:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="183" Height="125">
+                        <Image x:Name="userImg" Width="128" Height="110"></Image>
+                        <Button x:Name="btnSelectImg" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0" Click="btnSelectImg_Click">
+                            ...
+                        </Button>
+
+                    </StackPanel>
                 </Grid>
                 <Button Grid.Row="2" x:Name="btnUpdate" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnUpdate_Click">
                     Actualizar

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ using System.Windows.Shapes;
 using Expresso.Implementation;
 using Expresso.Model;
 using ExpressoWPF.Controls;
+using Microsoft.Win32;
 
 namespace ExpressoWPF.Pages.UserPages
 {
@@ -27,6 +29,7 @@ namespace ExpressoWPF.Pages.UserPages
         EmployeeImpl employeeType;
         Employee employee;
         TownImpl townType;
+        string fileName;
         List<string> roles = new List<string>() { "Administrador", "Gerente", "Cajero" };
 
         public List()
@@ -43,9 +46,16 @@ namespace ExpressoWPF.Pages.UserPages
                 try
                 {
                     scaleUp(false);
-                    dgvData.ItemsSource = employeeType.Select(filter).DefaultView;
+                    DataTable dt = employeeType.Select(txtFilter.Text);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dr["photo"] = ConfigClass.pathPhotoEmployee + dr["photo"];
+                    }
+
+                    dgvData.ItemsSource = dt.DefaultView;
                     txtInfo.Text = dgvData.Items.Count + " Registros Encontrados.";
-                    dgvData.Columns[0].Visibility = Visibility.Collapsed;
+                    dgvData.Columns[1].Visibility = Visibility.Collapsed;
+                    dgvData.Columns[2].Visibility = Visibility.Collapsed;
                     btnFilter.SetValue(Grid.ColumnSpanProperty, 1);
                     btnShowAll.Visibility = Visibility.Visible;
                     txtFilter.Text = string.Empty;
@@ -93,7 +103,7 @@ namespace ExpressoWPF.Pages.UserPages
                 try
                 {
                     DataRowView d = (DataRowView)dgvData.SelectedItem;
-                    byte id = byte.Parse(d.Row.ItemArray[0].ToString());
+                    byte id = byte.Parse(d.Row.ItemArray[1].ToString());
                     employeeType = new EmployeeImpl();
                     employee = employeeType.Get(id);
                     if (employee != null)
@@ -103,6 +113,7 @@ namespace ExpressoWPF.Pages.UserPages
                         txtPhone.Text = employee.Phones;
                         cbRole.SelectedIndex =roles.IndexOf(employee.Role);
                         cbTown.SelectedIndex = cbTown.Items.IndexOf(employee.TownName);
+                        userImg.Source = new BitmapImage(new Uri(ConfigClass.pathPhotoEmployee + employee.Photo));
                         scaleDown(false);
                     }
                 }
@@ -135,9 +146,17 @@ namespace ExpressoWPF.Pages.UserPages
                         employee.TownName = town;
                         if (!employeeType.Exists(txtEmail.Text)|| employee.Email.ToLower() == email.ToLower())
                         {
+                            
                             employee.Email = email;
                             try
                             {
+                                if (fileName != null)
+                                {
+                                    var fileNameToSave = DateTime.Now.ToFileTime() + System.IO.Path.GetExtension(fileName);
+                                    var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoEmployee + fileNameToSave);
+                                    File.Copy(fileName, imagePath);
+                                    employee.Photo = fileNameToSave;
+                                }
                                 int n = employeeType.Update(employee);
                                 if(n > 0)
                                 {
@@ -201,9 +220,17 @@ namespace ExpressoWPF.Pages.UserPages
             dgvData.ItemsSource = null;
             try
             {
-                dgvData.ItemsSource = employeeType.Select().DefaultView;
+                DataTable dt = employeeType.Select();
+                foreach(DataRow dr in dt.Rows)
+                {
+                    dr["photo"] = ConfigClass.pathPhotoEmployee + dr["photo"];
+                }
+
+                dgvData.ItemsSource = dt.DefaultView;
                 txtInfo.Text = dgvData.Items.Count + " Registos encontrados.";
-                dgvData.Columns[0].Visibility = Visibility.Collapsed;
+                dgvData.Columns[1].Visibility = Visibility.Collapsed;
+                dgvData.Columns[2].Visibility = Visibility.Collapsed;
+
             } catch(Exception ex)
             {
                 showException(ex); 
@@ -238,6 +265,25 @@ namespace ExpressoWPF.Pages.UserPages
         {
             SelectEmployees();
             SelectTowns();
+        }
+
+        private void btnSelectImg_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            if (fd.ShowDialog() == true)
+            {
+                var extension = System.IO.Path.GetExtension(fd.FileName);
+                if (extension == ".png" || extension == ".jpg")
+                {
+                    userImg.Source = new BitmapImage(new Uri(fd.FileName));
+                    fileName = fd.FileName;
+                }
+                else
+                {
+                    new PopUpWindow(0, "Seleccione una imagen valida.").Show();
+                }
+
+            }
         }
     }
 }

@@ -113,7 +113,7 @@ namespace Expresso.Model
         /// <param name="dateTime"></param>
         /// <param name="v9"></param>
         /// <param name="v10"></param>
-        public Employee(byte id, string phones, string address, string role, string townName, string email)
+        public Employee(byte id, string phones, string address, string role, string townName, string email, string photo)
         {
             Id = id;
             Phones = phones;
@@ -121,6 +121,7 @@ namespace Expresso.Model
             Role = role;
             TownName = townName;
             Email = email;
+            Photo = photo;
         }
 
         public Employee(string firstName, string lastName, DateTime birthDate, string role, string userName)

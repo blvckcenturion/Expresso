@@ -46,10 +46,13 @@ namespace ExpressoWPF
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             EmployeeImpl employeeImpl = new EmployeeImpl();
+            ConfigImpl configImpl = new ConfigImpl();
             DataTable t = new DataTable();
+            DataTable config = new DataTable();
             try
             {
                 t = employeeImpl.Login(txtUserName.Text, txtPassword.Password);
+                config = configImpl.Select();
                 if(t.Rows.Count > 0)
                 {
                     if(byte.Parse(t.Rows[0][13].ToString()) == 1)
@@ -70,6 +73,8 @@ namespace ExpressoWPF
                         SessionClass.sessionRole = t.Rows[0][10].ToString();
                         SessionClass.sessionTown = t.Rows[0][11].ToString();
                         SessionClass.sessionEmail = t.Rows[0][12].ToString();
+                        SessionClass.sessionPhoto = t.Rows[0][14].ToString();
+                        ConfigClass.pathPhotoEmployee = config.Rows[0][0].ToString();
                         MainWindow win = new MainWindow();
                         win.Show();
                         this.Visibility = Visibility.Hidden;

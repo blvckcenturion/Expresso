@@ -15,6 +15,9 @@ using System.Data;
 using Expresso.Implementation;
 using ExpressoWPF.Controls;
 using Expresso.Model;
+using Microsoft.Win32;
+using System.Windows.Media.Imaging;
+using System.IO;
 
 namespace ExpressoWPF.Pages.UserPages
 {
@@ -27,6 +30,7 @@ namespace ExpressoWPF.Pages.UserPages
         TownImpl townType;
         EmployeeImpl employeeType;
         Employee employee;
+        string fileName;
         public New(Main main)
         {
             InitializeComponent();
@@ -39,23 +43,36 @@ namespace ExpressoWPF.Pages.UserPages
             ValidatedUser vu = Main.ValidateUser(txtFirstName.Text, txtLastName.Text, txtSecondLastName.Text, txtPhone.Text, txtAddress.Text, txtCI.Text, txtEmail.Text, cbGender.Text, cbRoles.Text, cbTown.Text, dpBirthDate.SelectedDate.ToString());
             if (vu.IsValidated)
             {
-                vu.Employee.UserName = generateUserName(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.CI, vu.Employee.Gender, vu.Employee.Role);
-                vu.Employee.Password = generateUserPassword(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.BirthDate, vu.Employee.Role);
-                try
+                if(fileName != null)
                 {
-                    employee = vu.Employee;
-                    int n = employeeType.Insert(employee);
-                    if (n > 0)
+                    vu.Employee.UserName = generateUserName(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.CI, vu.Employee.Gender, vu.Employee.Role);
+                    vu.Employee.Password = generateUserPassword(vu.Employee.FirstName, vu.Employee.LastName, vu.Employee.BirthDate, vu.Employee.Role);
+                    
+                    try
                     {
-                        sendEmail(employee.Email, employee.UserName, employee.Password);
-                        new PopUpWindow(1, "Insercion de producto realizada de forma exitosa.\n" + DateTime.Now).Show();
-                    } else
-                    {
-                        new PopUpWindow(0, "No se realizarion inserciones\n" + DateTime.Now).Show();
+                        var fileNameToSave = DateTime.Now.ToFileTime() + System.IO.Path.GetExtension(fileName);
+                        var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoEmployee + fileNameToSave);
+                        File.Copy(fileName, imagePath);
+                        vu.Employee.Photo = fileNameToSave;
+                        employee = vu.Employee;
+                        int n = employeeType.Insert(employee);
+                        if (n > 0)
+                        {
+                            sendEmail(employee.Email, employee.UserName, employee.Password);
+                            new PopUpWindow(1, "Insercion de empleado realizada de forma exitosa.\n" + DateTime.Now).Show();
+                        }
+                        else
+                        {
+                            new PopUpWindow(0, "No se realizarion inserciones\n" + DateTime.Now).Show();
+                        }
                     }
-                } catch (Exception ex)
+                    catch (Exception ex)
+                    {
+                        new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
+                    }
+                } else
                 {
-                    new PopUpWindow(0, "No se pudo completar la acción\nComuniquese con el Adm de Sistemas.\n" + ex.Message).Show();
+                    new PopUpWindow(0, "Seleccione una imagen de perfil para continuar.").Show();
                 }
             }
         }
@@ -88,18 +105,16 @@ namespace ExpressoWPF.Pages.UserPages
         {
             firstName = firstName.Substring(0,1);
             lastName = lastName.Substring(0, 1);
-            ci = ci.Substring(ci.Length - 3,2);
             role = role.Substring(0,1);
             string unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds().ToString();
             unixTime = unixTime.Substring(unixTime.Length-7);
-            return firstName + lastName +gender + role + ci + unixTime;
+            return firstName + lastName +gender + role + unixTime;
         }
 
         private string generateUserPassword(string firstName, string lastName, DateTime date, string role)
         {
-            firstName = firstName.ToUpper() + date.Year;
-            lastName = lastName.ToLower() + date.Minute;
-            return firstName + lastName + role.Substring(0,3) + DateTime.Now.Second;
+            firstName = firstName.ToUpper() + date.Year + date.Minute; 
+            return firstName +  role.Substring(0,3) + DateTime.Now.Second;
         }
 
         private void SelectTowns()
@@ -124,6 +139,25 @@ namespace ExpressoWPF.Pages.UserPages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             SelectTowns();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fd = new OpenFileDialog();
+            if(fd.ShowDialog() == true)
+            {
+                var extension = System.IO.Path.GetExtension(fd.FileName);
+                if (extension == ".png" || extension == ".jpg")
+                {
+                    img.Source = new BitmapImage(new Uri(fd.FileName));
+                    txtImg.Text = fd.FileName;
+                    fileName = fd.FileName;
+                } else
+                {
+                    new PopUpWindow(0, "Seleccione una imagen valida.").Show();
+                }
+                
+            }
         }
     }
 }
