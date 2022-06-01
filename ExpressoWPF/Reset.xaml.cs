@@ -34,7 +34,8 @@ namespace ExpressoWPF
                 try
                 {
                     Employee employee = employeeImpl.Get(txtEmail.Text);
-                    string password = employee.FirstName.ToUpper() + employee.BirthDate.Year + employee.LastName.ToLower() + employee.BirthDate.Minute + employee.Role.Substring(0, 3) + DateTime.Now.Second;
+                    
+                    string password = employee.FirstName.ToUpper() + employee.BirthDate.Minute + employee.Role.Substring(0, 3) + DateTime.Now.Second;
                     int n = employeeImpl.Update(txtEmail.Text, password);
                     if(n > 0)
                     {

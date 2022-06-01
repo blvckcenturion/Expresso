@@ -59,18 +59,18 @@
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Fecha de Nacimiento:" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <DatePicker x:Name="dpBirthDate" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" />
+                <DatePicker x:Name="dpBirthDate" Width="300" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" />
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Genero:" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <ComboBox x:Name="cbGender"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
+                <ComboBox x:Name="cbGender"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}">
                     <ComboBoxItem Content="Masculino"/>
                     <ComboBoxItem Content="Femenino"/>
                 </ComboBox>
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="0" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Rol de Usuario:" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <ComboBox x:Name="cbRoles"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
+                <ComboBox x:Name="cbRoles"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}">
                     <ComboBoxItem Content="Administrador"/>
                     <ComboBoxItem Content="Gerente"/>
                     <ComboBoxItem Content="Cajero"/>
@@ -78,7 +78,7 @@
             </StackPanel>
             <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <ComboBox x:Name="cbTown"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignSnackbarRipple}" Background="{x:Null}">
+                <ComboBox x:Name="cbTown"  Width="320" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}">
                     <ComboBoxItem Content="Administrador"/>
                     <ComboBoxItem Content="Gerente"/>
                     <ComboBoxItem Content="Cajero"/>

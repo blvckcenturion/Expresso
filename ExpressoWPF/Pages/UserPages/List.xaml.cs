@@ -270,19 +270,12 @@ namespace ExpressoWPF.Pages.UserPages
         private void btnSelectImg_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Archivos de Imagen|*.jpg";
             if (fd.ShowDialog() == true)
             {
                 var extension = System.IO.Path.GetExtension(fd.FileName);
-                if (extension == ".png" || extension == ".jpg")
-                {
-                    userImg.Source = new BitmapImage(new Uri(fd.FileName));
-                    fileName = fd.FileName;
-                }
-                else
-                {
-                    new PopUpWindow(0, "Seleccione una imagen valida.").Show();
-                }
-
+                userImg.Source = new BitmapImage(new Uri(fd.FileName));
+                fileName = fd.FileName;
             }
         }
     }

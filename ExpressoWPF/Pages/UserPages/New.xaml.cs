@@ -107,13 +107,13 @@ namespace ExpressoWPF.Pages.UserPages
             lastName = lastName.Substring(0, 1);
             role = role.Substring(0,1);
             string unixTime = ((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds().ToString();
-            unixTime = unixTime.Substring(unixTime.Length-7);
-            return firstName + lastName +gender + role + unixTime;
+            unixTime = unixTime.Substring(unixTime.Length-8);
+            return firstName + lastName + unixTime;
         }
 
         private string generateUserPassword(string firstName, string lastName, DateTime date, string role)
         {
-            firstName = firstName.ToUpper() + date.Year + date.Minute; 
+            firstName = firstName.ToUpper() + date.Minute; 
             return firstName +  role.Substring(0,3) + DateTime.Now.Second;
         }
 
@@ -144,19 +144,13 @@ namespace ExpressoWPF.Pages.UserPages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "Archivos de Imagen|*.jpg";
             if(fd.ShowDialog() == true)
             {
-                var extension = System.IO.Path.GetExtension(fd.FileName);
-                if (extension == ".png" || extension == ".jpg")
-                {
-                    img.Source = new BitmapImage(new Uri(fd.FileName));
-                    txtImg.Text = fd.FileName;
-                    fileName = fd.FileName;
-                } else
-                {
-                    new PopUpWindow(0, "Seleccione una imagen valida.").Show();
-                }
-                
+                img.Source = new BitmapImage(new Uri(fd.FileName));
+                txtImg.Text = fd.FileName;
+                fileName = fd.FileName;
+     
             }
         }
     }
