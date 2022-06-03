@@ -5,10 +5,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Expresso.Interfaces;
 
 namespace Expresso.Implementation
 {
-    public class ConfigImpl: BaseImpl
+    public class ConfigImpl: BaseImpl, IConfig
     {
         public DataTable Select()
         {

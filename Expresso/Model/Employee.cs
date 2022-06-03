@@ -132,5 +132,9 @@ namespace Expresso.Model
             Role = role;
             UserName = userName;
         }
+
+        public Employee()
+        {
+        }
     }
 }

@@ -21,8 +21,10 @@ namespace ExpressoWPF.Pages.SettingsPages
     public partial class Main : Page
     {
         List<Button> buttons = new List<Button>();
-        public Main()
+        MainWindow mw;
+        public Main(MainWindow main)
         {
+            mw = main;
             InitializeComponent();
             buttons.Add(btnSection1);
             buttons.Add(btnSection2);
@@ -48,7 +50,7 @@ namespace ExpressoWPF.Pages.SettingsPages
             switch (value)
             {
                 case 0:
-                    Content.Navigate(new ChangeUserInformation());
+                    Content.Navigate(new ChangeUserInformation(mw));
                     break;
                 case 1:
                     Content.Navigate(new ChangePassword());

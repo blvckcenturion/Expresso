@@ -52,7 +52,7 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Collapsed" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
+        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Hidden" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
             <Grid Grid.Column="1" Margin="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
@@ -67,30 +67,31 @@
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="72*"/>
+                        <RowDefinition Height="72*"/>
+                        <RowDefinition Height="72*"/>
+                        <RowDefinition Height="31*"/>
+                        <RowDefinition Height="41*"/>
+                        <RowDefinition Height="72*"/>
+                        <RowDefinition Height="144*"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Correo:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtEmail" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBlock Grid.Column="0" Text="Correo:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox x:Name="txtEmail" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="91,0,5,0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" Grid.ColumnSpan="2"/>
                     <TextBlock Grid.Column="0" Grid.Row="1" Text="Telefono:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" FontSize="18"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="txtPhone" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBox Grid.Row="1" x:Name="txtPhone" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="91,0,5,0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" Grid.ColumnSpan="2"/>
                     <TextBlock Grid.Column="0" Grid.Row="2" Text="Direccion:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display"  FontSize="18"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtAddress" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBox Grid.Row="2" x:Name="txtAddress" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="91,0,5,0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" Grid.ColumnSpan="2"/>
 
-                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Rol:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
-                    <ComboBox Grid.Column="1" Grid.Row="3" x:Name="cbRole" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}">
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Rol:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Top" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18" Margin="0,25,0,0" Grid.RowSpan="2"/>
+                    <ComboBox Grid.Row="3" x:Name="cbRole" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}" Grid.ColumnSpan="2" Margin="91,24,0,0" Grid.RowSpan="2" VerticalAlignment="Top">
                         <ComboBoxItem Content="Administrador"/>
                         <ComboBoxItem Content="Gerente"/>
                         <ComboBoxItem Content="Cajero"/>
                     </ComboBox>
-                    <TextBlock Grid.Column="0" Grid.Row="4" Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
-                    <ComboBox Grid.Column="1" Grid.Row="4" x:Name="cbTown" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}"/>
-                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Imagen:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
-                    <StackPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="183" Height="125">
+                    <TextBlock Grid.Column="0" Grid.Row="5" Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <ComboBox Grid.Row="5" x:Name="cbTown" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}" Grid.ColumnSpan="2" Margin="91,0,0,0"/>
+                    <TextBlock Grid.Column="0" Grid.Row="6" Text="Imagen:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="183" Height="125">
                         <Image x:Name="userImg" Width="128" Height="110"></Image>
                         <Button x:Name="btnSelectImg" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10 0 0 0" Click="btnSelectImg_Click">
                             ...

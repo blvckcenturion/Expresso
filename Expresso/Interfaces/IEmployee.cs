@@ -16,5 +16,6 @@ namespace Expresso.Interfaces
         bool MatchesPassword(int id, string password);
         int Update(int id, string password);
         int Update(string email, string password);
+        int GetGenerateID();
     }
 }

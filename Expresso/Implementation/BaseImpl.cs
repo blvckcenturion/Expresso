@@ -61,6 +61,24 @@ namespace Expresso.Implementation
             return reader;
         }
 
+        public string GetGenerateIDTable(string tableName)
+        {
+            string query = @"SELECT IDENT_CURRENT('" + tableName +"') + IDENT_INCR('" + tableName + "')";
+            SqlCommand command = CreateBasicCommand(query);
+            try
+            {
+                command.Connection.Open();
+                return command.ExecuteScalar().ToString();
+            } catch(Exception ex)
+            {
+                throw ex;
+            } finally
+            {
+                command.Connection.Close();
+            }
+        }
+
+
         public DataTable ExecuteDataTableCommand(SqlCommand command)
         {
             try

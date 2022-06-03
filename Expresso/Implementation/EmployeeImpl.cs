@@ -322,5 +322,16 @@ namespace Expresso.Implementation
                 throw ex;
             }
         }
+
+        public int GetGenerateID()
+        {
+            try
+            {
+                return int.Parse(GetGenerateIDTable("Employee"));
+            } catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

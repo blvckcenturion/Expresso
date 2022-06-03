@@ -50,10 +50,10 @@ namespace ExpressoWPF.Pages.UserPages
                     
                     try
                     {
-                        var fileNameToSave = DateTime.Now.ToFileTime() + System.IO.Path.GetExtension(fileName);
-                        var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoEmployee + fileNameToSave);
+                        var fileNameToSave = DateTime.Now.ToFileTime();
+                        var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoEmployee + fileNameToSave + ".jpg");
                         File.Copy(fileName, imagePath);
-                        vu.Employee.Photo = fileNameToSave;
+                        vu.Employee.Photo = fileNameToSave.ToString();
                         employee = vu.Employee;
                         int n = employeeType.Insert(employee);
                         if (n > 0)
@@ -76,6 +76,8 @@ namespace ExpressoWPF.Pages.UserPages
                 }
             }
         }
+
+        
 
 
         private void sendEmail(string to, string userName, string password)

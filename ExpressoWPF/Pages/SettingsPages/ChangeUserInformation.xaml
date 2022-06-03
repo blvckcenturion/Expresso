@@ -7,9 +7,67 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ChangeUserInformation">
-
-    <Grid>
-        <Label Content="User Info" HorizontalAlignment="Left" Margin="489,0,0,0" VerticalAlignment="Center" Foreground="#DDFFFFFF"/>
-
-    </Grid>
+    <Border BorderBrush="{DynamicResource AccentColor}" CornerRadius="10" BorderThickness="3" Margin="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Cambiar Informacion" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="Monument Extended"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" >
+                    <TextBlock Text="Correo:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtEmail" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="50 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <TextBlock Text="Telefono:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtPhone" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="50 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <TextBlock Text="Direccion:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtAddress" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="50 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <TextBlock Text="Direccion:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <ComboBox Grid.Row="5" x:Name="cbTown" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource AccentColor}" Background="{x:Null}" Grid.ColumnSpan="2" Margin="50 0"/>
+                </StackPanel>
+                <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="40 10" BorderBrush="{DynamicResource AccentColor}" CornerRadius="10" BorderThickness="3">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Foto de Perfil:" Foreground="{DynamicResource PrimaryTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="txtImg" Grid.Row="1" Grid.Column="0" Foreground="{DynamicResource PrimaryTextColor}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="11"/>
+                        <Button x:Name="btnImage" Grid.Row="1" Grid.Column="1" Margin="50 5" Click="btnImage_Click">
+                            ...
+                        </Button>
+                        <Image x:Name="userImg" Grid.Row="2" Grid.ColumnSpan="2" Margin="80 5"/>
+                    </Grid>
+                    
+                </Border>
+                
+                <StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button x:Name="btnInsert" Margin="5" Width="300" Content="Actualizar Informacion" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" FontWeight="Normal" Click="btnInsert_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
 </Page>

@@ -35,7 +35,7 @@
                               Width="40" Height="40"
                               HorizontalAlignment="Left">
                         <Border.Background>
-                            <ImageBrush ImageSource="Resources/Images/Isotype.png" Stretch="Uniform"/>
+                            <ImageBrush Stretch="Uniform" ImageSource="/Resources/Images/Isotype.png"/>
                         </Border.Background>
                     </Border>
 
@@ -139,7 +139,7 @@
                 </Grid.ColumnDefinitions>
                 <Border CornerRadius="50" Margin="5" Grid.Column="0">
                     <Border.Background>
-                        <ImageBrush x:Name="profileImg" Stretch="UniformToFill" ImageSource="C:\Users\SANTIAGO\Desktop\Isotype.png"/>
+                        <ImageBrush x:Name="profileImg" Stretch="UniformToFill"/>
                     </Border.Background>
                 </Border>
                 <Grid Grid.Column="1" Margin="10 0 0 0">

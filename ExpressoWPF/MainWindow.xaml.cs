@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Expresso.Implementation;
+using ExpressoWPF.Pages;
 
 namespace ExpressoWPF
 {
@@ -138,7 +139,8 @@ namespace ExpressoWPF
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/SettingsPages/Main.xaml", UriKind.RelativeOrAbsolute));
+
+            fContainer.Navigate(new Pages.SettingsPages.Main(this));
         }
 
         private void btnProductCategories_Click(object sender, RoutedEventArgs e)
@@ -151,7 +153,7 @@ namespace ExpressoWPF
         {
             txtName.Text = SessionClass.sessionFirstName + " " + SessionClass.sessionLastName + (SessionClass.sessionSecondLastName != "" ? " " + SessionClass.sessionSecondLastName : "");
             txtRole.Text = SessionClass.sessionRole;
-            profileImg.ImageSource = new BitmapImage(new Uri(ConfigClass.pathPhotoEmployee + SessionClass.sessionPhoto));
+            profileImg.ImageSource = new BitmapImage(new Uri(ConfigClass.pathPhotoEmployee + SessionClass.sessionPhoto + ".jpg"));
             switch (SessionClass.sessionRole)
             {
                 case "Cajero":

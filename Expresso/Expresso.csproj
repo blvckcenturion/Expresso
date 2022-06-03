@@ -53,6 +53,7 @@
     <Compile Include="Implementation\SessionClass.cs" />
     <Compile Include="Implementation\TownImpl.cs" />
     <Compile Include="Interfaces\IBaseInterface.cs" />
+    <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\IProductCategory.cs" />
