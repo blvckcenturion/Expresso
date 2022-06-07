@@ -155,19 +155,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Locations.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\NewOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PreviousSales.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ProductCategories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,10 +184,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ProductPages\New.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,17 +232,11 @@
     <Compile Include="Pages\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Locations.xaml.cs">
-      <DependentUpon>Locations.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\NewOrder.xaml.cs">
       <DependentUpon>NewOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PreviousSales.xaml.cs">
       <DependentUpon>PreviousSales.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ProductCategories.xaml.cs">
-      <DependentUpon>ProductCategories.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProductCategoryPages\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
@@ -273,9 +255,6 @@
     </Compile>
     <Compile Include="Pages\ProductPages\New.xaml.cs">
       <DependentUpon>New.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserPages\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>

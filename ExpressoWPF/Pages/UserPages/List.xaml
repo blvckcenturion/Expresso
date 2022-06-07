@@ -52,7 +52,7 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Hidden" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
+        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Collapsed" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="30">
             <Grid Grid.Column="1" Margin="30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>

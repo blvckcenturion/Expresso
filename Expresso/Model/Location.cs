@@ -18,6 +18,7 @@ namespace Expresso.Model
         public double Longitude { get; set; }
         public byte TownID { get; set; }
         public string TownName { get; set; }
+        #endregion
 
         /// <summary>
         /// INSERT
@@ -39,8 +40,17 @@ namespace Expresso.Model
             Longitude = longitude;
             TownName = townName;
         }
-        #endregion
 
-
+        public Location(int id, string locationName, string locationAddress, string phoneNumber, string photo, double latitude, double longitude, string townName)
+        {
+            Id = id;
+            LocationName = locationName;
+            LocationAddress = locationAddress;
+            PhoneNumber = phoneNumber;
+            Photo = photo;
+            Latitude = latitude;
+            Longitude = longitude;
+            TownName = townName;
+        }
     }
 }

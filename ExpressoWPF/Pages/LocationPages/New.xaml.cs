@@ -64,9 +64,9 @@ namespace ExpressoWPF.Pages.LocationPages
                             try 
                             {
                                 var fileNameToSave = DateTime.Now.ToFileTime();
-                                var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoEmployee + fileNameToSave + ".jpg");
+                                var imagePath = System.IO.Path.Combine(ConfigClass.pathPhotoLocation + fileNameToSave + ".jpg");
                                 File.Copy(fileName, imagePath);
-                                location = new Expresso.Model.Location(name, details, phone, fileNameToSave.ToString(), point.Longitude, point.Latitude, town);
+                                location = new Expresso.Model.Location(name, details, phone, fileNameToSave.ToString(), point.Latitude, point.Longitude, town);
                                 int n = locationType.Insert(location);
                                 if (n > 0)
                                 {

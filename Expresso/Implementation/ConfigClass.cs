@@ -9,5 +9,6 @@ namespace Expresso.Implementation
     public class ConfigClass
     {
         public static string pathPhotoEmployee;
+        public static string pathPhotoLocation;
     }
 }
