@@ -36,7 +36,6 @@ namespace ExpressoWPF.Pages.UserPages
         public Main()
         {
             InitializeComponent();
-            InitializeComponent();
             buttons.Add(btnSection1);
             buttons.Add(btnSection2);
             SwitchTabs(0);

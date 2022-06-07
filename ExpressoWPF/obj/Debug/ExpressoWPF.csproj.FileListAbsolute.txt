@@ -75,3 +75,11 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPage
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangeUserInformation.g.cs
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangePassword.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\SettingsPages\ChangeUserInformation.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\List.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\New.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\Main.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\List.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\Main.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\New.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Microsoft.Maps.MapControl.WPF.xml

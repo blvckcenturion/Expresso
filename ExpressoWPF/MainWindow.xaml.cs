@@ -129,7 +129,7 @@ namespace ExpressoWPF
 
         private void btnLocations_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/Locations.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(new System.Uri("Pages/LocationPages/Main.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnProducts_Click(object sender, RoutedEventArgs e)

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ExpressoWPF.Pages
+namespace ExpressoWPF.Pages.LocationPages
 {
     /// <summary>
-    /// Lógica de interacción para Settings.xaml
+    /// Lógica de interacción para List.xaml
     /// </summary>
-    public partial class Settings : Page
+    public partial class List : Page
     {
-        public Settings()
+        public List()
         {
             InitializeComponent();
         }
