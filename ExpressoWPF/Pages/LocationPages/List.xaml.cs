@@ -68,7 +68,7 @@ namespace ExpressoWPF.Pages.LocationPages
         private void scaleDown(bool select)
         {
             MainContent.SetValue(Grid.ColumnSpanProperty, 1);
-            dgvData.FontSize = 18;
+            dgvData.FontSize = 24;
             if (select)
             {
                 dgvData.ItemsSource = null;
@@ -132,6 +132,8 @@ namespace ExpressoWPF.Pages.LocationPages
                     txtInfo.Text = dgvData.Items.Count + " Registros Encontrados.";
                     dgvData.Columns[1].Visibility = Visibility.Collapsed;
                     dgvData.Columns[2].Visibility = Visibility.Collapsed;
+                    dgvData.Columns[5].Visibility = Visibility.Collapsed;
+                    dgvData.Columns[6].Visibility = Visibility.Collapsed;
                     btnFilter.SetValue(Grid.ColumnSpanProperty, 1);
                     btnShowAll.Visibility = Visibility.Visible;
                     txtFilter.Text = string.Empty;
