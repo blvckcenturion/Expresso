@@ -1,4 +1,4 @@
-﻿
+﻿C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\App.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\ChangePassword.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\MenuItem.xaml;;
@@ -6,11 +6,17 @@ FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\PopUpWindow.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Controls\UserPopup.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Login.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\MainWindow.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ClientPages\List.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ClientPages\Main.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ClientPages\New.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\Home.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\LocationPages\List.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\LocationPages\Main.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\LocationPages\New.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\NewOrder.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\OrderPages\List.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\OrderPages\Main.xaml;;
+FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\OrderPages\New.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\PreviousSales.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductCategoryPages\List.xaml;;
 FC:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\Pages\ProductCategoryPages\Main.xaml;;

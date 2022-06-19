@@ -23,9 +23,10 @@ namespace ExpressoWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Pages.LocationPages.Main location;
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();  
             fContainer.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -104,48 +105,71 @@ namespace ExpressoWPF
         // End: Button Close | Restore | Minimize
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
+            fContainer.Navigate(null);
             fContainer.Navigate(new System.Uri("Pages/UserPages/Main.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnClients_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)
         {
+            fContainer.Navigate(null);
             fContainer.Navigate(new System.Uri("Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnPointOfSale_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/NewOrder.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(null);
+            fContainer.Navigate(new System.Uri("Pages/OrderPages/Main.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnPreviousSales_Click(object sender, RoutedEventArgs e)
         {
+            fContainer.Navigate(null);
             fContainer.Navigate(new System.Uri("Pages/PreviousSales.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void btnLocations_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/LocationPages/Main.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Navigate(null);
+            location = new Pages.LocationPages.Main();
+            fContainer.Navigate(location);
         }
 
         private void btnProducts_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/ProductPages/Main.xaml", UriKind.RelativeOrAbsolute));
+            if(location != null)
+            {
+                location.Content.Navigate(null);
+                location = null;
+            }
+            fContainer.Navigate(null);
+            Dispatcher.BeginInvoke(new Action(() => {
+                fContainer.Navigate(new System.Uri("Pages/ProductPages/Main.xaml", UriKind.RelativeOrAbsolute));
+            }));
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
 
-            fContainer.Navigate(new Pages.SettingsPages.Main(this));
+            fContainer.Navigate(null);
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                fContainer.Navigate(new Pages.SettingsPages.Main(this));
+            }));
         }
 
         private void btnProductCategories_Click(object sender, RoutedEventArgs e)
         {
-            fContainer.Navigate(new System.Uri("Pages/ProductCategoryPages/Main.xaml", UriKind.RelativeOrAbsolute));
+            fContainer.Source = null;
+            
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                fContainer.Navigate(new System.Uri("Pages/ProductCategoryPages/Main.xaml", UriKind.RelativeOrAbsolute));
+            }));
         }
 
         // Window Events
@@ -178,5 +202,7 @@ namespace ExpressoWPF
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
         }
+
+       
     }
 }

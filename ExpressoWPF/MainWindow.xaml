@@ -130,7 +130,7 @@
             <Frame Grid.Row="1"
                        Name="fContainer"
                        Margin="20"
-                       NavigationUIVisibility="Hidden">
+                       NavigationUIVisibility="Hidden" >
 
             </Frame>
             <Grid Width="300"  Margin="0 10 0 0">

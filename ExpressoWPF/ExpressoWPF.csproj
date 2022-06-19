@@ -74,6 +74,15 @@
     <Compile Include="ChangePassword.xaml.cs">
       <DependentUpon>ChangePassword.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ClientPages\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientPages\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientPages\New.xaml.cs">
+      <DependentUpon>New.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LocationPages\List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
@@ -81,6 +90,15 @@
       <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LocationPages\New.xaml.cs">
+      <DependentUpon>New.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPages\List.xaml.cs">
+      <DependentUpon>List.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPages\Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OrderPages\New.xaml.cs">
       <DependentUpon>New.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SettingsPages\ChangePassword.xaml.cs">
@@ -139,6 +157,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ClientPages\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClientPages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ClientPages\New.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Home.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +186,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\NewOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderPages\List.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderPages\Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\OrderPages\New.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

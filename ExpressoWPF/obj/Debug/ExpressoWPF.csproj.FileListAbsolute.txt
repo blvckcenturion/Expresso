@@ -77,3 +77,15 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPage
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\LocationPages\New.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Microsoft.Maps.MapControl.WPF.dll
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\Microsoft.Maps.MapControl.WPF.xml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\List.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\Main.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\New.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\List.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\Main.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\OrderPages\New.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\List.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\Main.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\New.g.cs
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\List.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\Main.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\New.baml
