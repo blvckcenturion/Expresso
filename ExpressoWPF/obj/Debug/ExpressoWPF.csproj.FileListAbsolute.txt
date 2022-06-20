@@ -89,3 +89,5 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\List.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\Main.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\New.baml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.dll
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.xml

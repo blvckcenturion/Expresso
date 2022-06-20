@@ -5,10 +5,42 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ExpressoWPF.Pages.ClientPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="New">
+      d:DesignHeight="800" d:DesignWidth="1200"
+      TextBlock.FontFamily="SF Pro Display"
+      TextBlock.TextAlignment="Center"
+      TextBlock.FontSize="20"
+      Title="New" Loaded="Page_Loaded">
 
-    <Grid>
-        
-    </Grid>
+    <Border Margin="10" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Nuevo Cliente" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="Monument Extended" FontSize="25" TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Nombre / Razon Social:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <TextBox x:Name="txtClientName" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="NIT:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <TextBox x:Name="txtClientID" Width="320" Cursor="Arrow" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}" Margin="5 0 0 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+                <ComboBox x:Name="cbTown" FontFamily="SF Pro Display" Width="320" Foreground="{DynamicResource AccentColor}" Background="{x:Null}" BorderBrush="{DynamicResource AccentColor}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button x:Name="btnInsert" Margin="5" Width="300" Content="Agregar" Cursor="Hand" Background="{DynamicResource AccentColor}" BorderBrush="{x:Null}" Foreground="{DynamicResource PrimaryTextColor}" Click="btnInsert_Click" FontWeight="Normal"/>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>

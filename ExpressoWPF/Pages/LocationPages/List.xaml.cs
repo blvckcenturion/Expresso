@@ -41,6 +41,7 @@ namespace ExpressoWPF.Pages.LocationPages
         {
             SelectLocations();
             SelectTowns();
+            
         }
 
         void SelectLocations()

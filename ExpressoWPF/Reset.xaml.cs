@@ -68,7 +68,7 @@ namespace ExpressoWPF
             smtp.UseDefaultCredentials = false;
             smtp.Host = "smtp.gmail.com"; //Host del servidor de correo
             smtp.Port = 587; //Puerto de salida
-            smtp.Credentials = new System.Net.NetworkCredential("expresso.app.bolivia@gmail.com", "$Univalle2022");//Cuenta de correo
+            smtp.Credentials = new System.Net.NetworkCredential("expresso.app.bolivia@gmail.com", "pjsjkxdensnklwjm");//Cuenta de correo
             ServicePointManager.ServerCertificateValidationCallback = delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
             smtp.EnableSsl = true;
             smtp.Send(correo);

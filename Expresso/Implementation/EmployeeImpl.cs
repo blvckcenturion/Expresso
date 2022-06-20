@@ -225,7 +225,7 @@ namespace Expresso.Implementation
                              FROM Employee E
                              LEFT JOIN Town T ON T.id = E.townID
                              LEFT JOIN Province P ON T.provinceID = P.id
-							 WHERE E.id != @id AND status=1";
+                             WHERE E.id != @id AND status=1";
             SqlCommand command = CreateBasicCommand(query);
             command.Parameters.AddWithValue("@id", SessionClass.sessionUserID);
             try

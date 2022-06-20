@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementation\BaseImpl.cs" />
+    <Compile Include="Implementation\ClientImpl.cs" />
     <Compile Include="Implementation\ConfigClass.cs" />
     <Compile Include="Implementation\ConfigImpl.cs" />
     <Compile Include="Implementation\EmployeeImpl.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Implementation\SessionClass.cs" />
     <Compile Include="Implementation\TownImpl.cs" />
     <Compile Include="Interfaces\IBaseInterface.cs" />
+    <Compile Include="Interfaces\IClient.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="Interfaces\IEmployee.cs" />
     <Compile Include="Interfaces\ILocation.cs" />
@@ -61,6 +63,7 @@
     <Compile Include="Interfaces\IProductCategory.cs" />
     <Compile Include="Interfaces\ITown.cs" />
     <Compile Include="Model\BaseTable.cs" />
+    <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Product.cs" />

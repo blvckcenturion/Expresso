@@ -111,7 +111,8 @@ namespace ExpressoWPF
 
         private void btnClients_Click(object sender, RoutedEventArgs e)
         {
-            
+            fContainer.Navigate(null);
+            fContainer.Navigate(new Pages.ClientPages.Main());
         }
 
         private void btnHome_Click(object sender, RoutedEventArgs e)

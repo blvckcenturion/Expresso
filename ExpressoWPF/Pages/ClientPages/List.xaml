@@ -5,10 +5,80 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ExpressoWPF.Pages.ClientPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.FontFamily="SF Pro Display"
+      TextElement.FontSize="20"
+      d:DesignHeight="800" d:DesignWidth="1200"
+      TextBlock.Foreground="{DynamicResource PrimaryTextColor}"
       Title="List">
 
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Grid.ColumnSpan="2" x:Name="MainContent" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="10">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Column="0" x:Name="txtFilter" Margin="5 20" Foreground="{DynamicResource PrimaryTextColor}" materialDesign:HintAssist.Hint="Nombre del Cliente" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}"/>
+                    <Button Grid.Column="1" Grid.ColumnSpan="2" x:Name="btnFilter" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnFilter_Click">
+                        Filtrar
+                    </Button>
+                    <Button Grid.Column="2" x:Name="btnShowAll" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnShowAll_Click" Visibility="Collapsed">
+                        Mostrar Todos
+                    </Button>
+                </Grid>
+                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" Loaded="dgvData_Loaded" FontFamily="SF Pro Display" FontSize="30" SelectionChanged="dgvData_SelectionChanged" />
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <TextBlock x:Name="txtInfo" Text="Clientes:" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="OptionsContent" Grid.Column="1" Visibility="Hidden" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3" Margin="10">
+            <Grid Grid.Column="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Detalles" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="{DynamicResource SecondaryAccentColor}" FontFamily="Monument Extended"/>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Nombre:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="txtClientName" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0 0 5 0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="NIT:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <TextBox Grid.Row="1" x:Name="txtClientID" Cursor="Arrow" Background="{x:Null}" VerticalAlignment="Center" BorderBrush="{DynamicResource AccentColor}" Margin="0,0,5,0" CaretBrush="{DynamicResource TextFourthColor}" SelectionBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource PrimaryTextColor}" Grid.ColumnSpan="2" HorizontalAlignment="Right" Width="238"/>
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Ciudad:" Foreground="{DynamicResource PrimaryTextColor}"  VerticalAlignment="Center" FontFamily="SF Pro Display" TextAlignment="Left" FontSize="18"/>
+                    <ComboBox Grid.Column="1" Grid.Row="3" x:Name="cbTown" FontFamily="SF Pro Display" BorderBrush="{DynamicResource AccentColor}" Foreground="{DynamicResource MaterialDesignCheckBoxDisabled}" Background="{x:Null}"/>
+                </Grid>
+                <Button Grid.Row="2" x:Name="btnUpdate" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnUpdate_Click">
+                    Actualizar
+                </Button>
+                <Button Grid.Row="3" x:Name="btnDelete" Margin="20 5" FontWeight="Normal" Cursor="Hand" Click="btnDelete_Click">
+                    Eliminar
+                </Button>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

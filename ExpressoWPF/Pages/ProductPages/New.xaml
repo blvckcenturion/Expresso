@@ -14,14 +14,14 @@
     <Border Margin="10" CornerRadius="10" BorderBrush="{DynamicResource AccentColor}" BorderThickness="3">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="5*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -45,6 +45,19 @@
             </StackPanel>
             <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock Text="Fotografia:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30"/>
+            </StackPanel>
+            <Grid Grid.Row="2" Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="Variaciones de Tamaño:" Foreground="{DynamicResource PrimaryTextColor}" Margin="0 0 0 30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <DataGrid Grid.Row="1" Margin="10"/>
+                
+            </Grid>
+            <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center">
+                
                 
             </StackPanel>
             <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Orientation="Horizontal" Margin="20"  VerticalAlignment="Center" HorizontalAlignment="Center">
