@@ -19,6 +19,20 @@ namespace Expresso.Implementation
             command.Connection = connection;
             return command;
         }
+        public List<SqlCommand> CreateNBasicCommand(int n)
+        {
+            List<SqlCommand> res = new List<SqlCommand>();
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            for (int i = 0; i < n; i++)
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = connection;
+                res.Add(command);
+            }
+
+            return res;
+        }
 
         public SqlCommand CreateBasicCommand(string query)
         {
@@ -42,6 +56,53 @@ namespace Expresso.Implementation
             {
                 command.Connection.Close();
             }
+        }
+
+        public void ExecuteNBasicCommand(List<SqlCommand> commands)
+        {
+            SqlTransaction transaction = null;
+            SqlCommand command1 = commands[0];
+            try
+            {
+                command1.Connection.Open();
+                transaction = command1.Connection.BeginTransaction();
+                foreach (SqlCommand item in commands)
+                {
+                    item.Transaction = transaction;
+                    item.ExecuteNonQuery();
+                }
+                transaction.Commit();
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                command1.Connection.Close();
+            }
+        }
+
+        public  string GetIDGenerateTable(string tableName)
+        {
+
+            string query = "SELECT IDENT_CURRENT('" + tableName + "') + IDENT_INCR('" + tableName + "')";
+            SqlCommand command = CreateBasicCommand(query);
+            try
+            {
+                command.Connection.Open();
+                return command.ExecuteScalar().ToString();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                command.Connection.Close();
+            }
+
         }
 
         public SqlDataReader ExecuteDataReaderCommand(SqlCommand command)

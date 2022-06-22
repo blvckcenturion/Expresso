@@ -23,7 +23,6 @@ namespace ExpressoWPF.Pages.ProductPages
         public bool isValidated { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
-        public float ProductBasePrice { get; set; }
         public string ProductCategory { get; set; }
     }
 
@@ -50,13 +49,11 @@ namespace ExpressoWPF.Pages.ProductPages
             SwitchTabs(1);
         }
 
-        public static ValidatedProduct ValidateProduct(string productName, string productDescription, string productBasePrice, string category, bool validateExistance)
+        public static ValidatedProduct ValidateProduct(string productName, string productDescription, string category, bool validateExistance, int productSizes)
         {
             productName = productName.Trim();
             productDescription = productDescription.Trim();
-            productBasePrice = productBasePrice.Trim();
-            float basePrice;
-            bool isNumeric = float.TryParse(productBasePrice, out basePrice);
+
             string error = "";
             ValidatedProduct vp = new ValidatedProduct();
 
@@ -67,18 +64,17 @@ namespace ExpressoWPF.Pages.ProductPages
                 {
                     if(productName.Length <= 150 && productDescription.Length <= 300)
                     {
-                        if (isNumeric && basePrice > 0)
+                        
+                        if (productSizes > 0)
                         {
-                            vp.ProductBasePrice = basePrice;
                             vp.ProductDescription = productDescription;
                             vp.ProductName = productName;
                             vp.ProductCategory = category;
                             vp.isValidated = true;
                             return vp;
-                        }
-                        else
+                        } else
                         {
-                            error = "El valor indicado para el precio base es invalido.";
+                            error = "El producto debe tener 1 variacion como minimo.";
                         }
                     } else
                     {

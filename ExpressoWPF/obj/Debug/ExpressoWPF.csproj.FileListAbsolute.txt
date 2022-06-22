@@ -91,3 +91,7 @@ C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\obj\Debug\Pages\ClientPages\New.baml
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.dll
 C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.xml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.Video.dll
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.Video.xml
+C:\Users\SANTIAGO\source\repos\Expresso\ExpressoWPF\bin\Debug\AForge.Video.DirectShow.xml

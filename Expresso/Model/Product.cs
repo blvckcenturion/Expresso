@@ -11,10 +11,10 @@ namespace Expresso.Model
         #region Properties
         public byte Id { get; set; }
         public byte ProductCategoryId { get; set; }
-        public float BasePrice { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string ProductCategoryName { get; set; }
+        public string Photo { get; set; }
 
         #endregion
 
@@ -32,15 +32,15 @@ namespace Expresso.Model
         /// <param name="registerDate"></param>
         /// <param name="lastUpdate"></param>
         /// <param name="userID"></param>
-        public Product(byte id, float basePrice, string productName, string productDescription, byte productCategoryId, byte status, string productCategoryName, DateTime registerDate, DateTime lastUpdate, int userID)
+        public Product(byte id, string productName, string productDescription, byte productCategoryId, byte status, string productCategoryName, DateTime registerDate, DateTime lastUpdate, int userID, string photo)
             : base(status, registerDate, lastUpdate, userID)
         {
             Id = id;
             ProductCategoryId = productCategoryId;
-            BasePrice = basePrice;
             ProductName = productName;
             ProductDescription = productDescription;
             ProductCategoryName = productCategoryName;
+            Photo = photo;
         }
 
         /// <summary>
@@ -50,10 +50,9 @@ namespace Expresso.Model
         /// <param name="productName"></param>
         /// <param name="productDescription"></param>
         /// <param name="productCategoryId"></param>
-        public Product(float basePrice, string productName, string productDescription, string productCategoryName)
+        public Product(string productName, string productDescription, string productCategoryName)
         {
             ProductCategoryName = productCategoryName;
-            BasePrice = basePrice;
             ProductName = productName;
             ProductDescription = productDescription;
         }

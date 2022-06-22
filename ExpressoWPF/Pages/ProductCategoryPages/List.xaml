@@ -36,7 +36,9 @@
                         Mostrar Todos
                     </Button>
                 </Grid>
-                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="18" SelectionChanged="dgvData_SelectionChanged" />
+                <DataGrid x:Name="dgvData" IsReadOnly="True" CanUserAddRows="False" Grid.Row="1" Background="{DynamicResource FourthIconColor}" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="18" SelectionChanged="dgvData_SelectionChanged">
+                    
+                </DataGrid>
                 <StackPanel Grid.Row="2" Orientation="Horizontal">
                     <TextBlock x:Name="txtInfo" Text="Categoria:" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="{DynamicResource PrimaryTextColor}" FontFamily="SF Pro Display" FontSize="20"/>
                 </StackPanel>

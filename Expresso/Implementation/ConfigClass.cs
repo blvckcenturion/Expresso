@@ -10,5 +10,6 @@ namespace Expresso.Implementation
     {
         public static string pathPhotoEmployee;
         public static string pathPhotoLocation;
+        public static string pathPhotoProduct;
     }
 }

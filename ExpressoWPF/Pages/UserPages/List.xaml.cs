@@ -106,6 +106,7 @@ namespace ExpressoWPF.Pages.UserPages
                     employee = employeeType.Get(id);
                     if (employee != null)
                     {
+
                         txtEmail.Text = employee.Email;
                         txtAddress.Text = employee.Address;
                         txtPhone.Text = employee.Phones;
@@ -222,7 +223,6 @@ namespace ExpressoWPF.Pages.UserPages
                 {
                     dr["photo"] = ConfigClass.pathPhotoEmployee + dr["photo"] + ".jpg";
                 }
-
                 dgvData.ItemsSource = dt.DefaultView;
                 txtInfo.Text = dgvData.Items.Count + " Registos encontrados.";
                 dgvData.Columns[1].Visibility = Visibility.Collapsed;

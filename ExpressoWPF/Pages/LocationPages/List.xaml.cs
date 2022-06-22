@@ -80,6 +80,7 @@ namespace ExpressoWPF.Pages.LocationPages
 
         private void scaleUp(bool select)
         {
+            OptionsContent.Visibility = Visibility.Collapsed;
             MainContent.SetValue(Grid.ColumnSpanProperty, 2);
             dgvData.FontSize = 24;
             dgvData.ItemsSource = null;

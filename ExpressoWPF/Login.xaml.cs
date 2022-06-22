@@ -76,6 +76,7 @@ namespace ExpressoWPF
                         SessionClass.sessionPhoto = t.Rows[0][14].ToString();
                         ConfigClass.pathPhotoEmployee = config.Rows[0][0].ToString();
                         ConfigClass.pathPhotoLocation = config.Rows[0][1].ToString();
+                        ConfigClass.pathPhotoProduct = config.Rows[0][2].ToString();
                         MainWindow win = new MainWindow();
                         win.Show();
                         this.Visibility = Visibility.Hidden;

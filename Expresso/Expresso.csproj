@@ -52,6 +52,7 @@
     <Compile Include="Implementation\LocationImpl.cs" />
     <Compile Include="Implementation\ProductCategoryImpl.cs" />
     <Compile Include="Implementation\ProductImpl.cs" />
+    <Compile Include="Implementation\ProductSizeImpl.cs" />
     <Compile Include="Implementation\SessionClass.cs" />
     <Compile Include="Implementation\TownImpl.cs" />
     <Compile Include="Interfaces\IBaseInterface.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Interfaces\ILocation.cs" />
     <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\IProductCategory.cs" />
+    <Compile Include="Interfaces\IProductSize.cs" />
     <Compile Include="Interfaces\ITown.cs" />
     <Compile Include="Model\BaseTable.cs" />
     <Compile Include="Model\Client.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductCategory.cs" />
+    <Compile Include="Model\ProductSize.cs" />
     <Compile Include="Model\Town.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -13,7 +13,7 @@ namespace Expresso.Implementation
     {
         public DataTable Select()
         {
-            string query = @"SELECT pathPhotoEmployee, pathPhotoLocation FROM Config";
+            string query = @"SELECT pathPhotoEmployee, pathPhotoLocation, pathPhotoProduct FROM Config";
             SqlCommand command = CreateBasicCommand(query);
             try
             {
